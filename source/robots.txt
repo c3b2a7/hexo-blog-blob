@@ -10,4 +10,4 @@ Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
 
-Sitemap: /sitemap.xml
+Sitemap: https://lolico.me/sitemap.xml
