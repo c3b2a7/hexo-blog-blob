@@ -207,7 +207,7 @@ public class App {
 Spring容器启动：创建'beanFactoryPostProcessor'Bean，再创建'me.lolicom.App#0'Bean。因为beanFactoryPostProcessor定义在App这个配置类中即依赖于'me.lolicom.App#0'Bean，那么Spring容器创建'beanFactoryPostProcessor'Bean导致提前实例化'me.lolicom.App#0'Bean，而此时Spring容器处于还未实例化所有Bean（只是加载了BeanDefinition）的生命周期，那么在创建'me.lolicom.App#0'Bean的时候自然不会去注入Environment属性，只是先实例化出来并未注入属性，参考Spring实例化Bean的三级缓存机制（提前暴露Bean以解决循环依赖的问题)。所以env为null，而后续实例化'dataSource'Bean，使用为null的env去get属性值当然就空指针异常了。
 
 事实上，通过断点调试也验证了这个结论:
-![断点调试](../images/38Ri.png)
+![断点调试](http://lolico.test.upcdn.net/images/38Ri.png)
 
 而且仔细观察日志，Spring也告诉了我们这一点:
 > 2019-12-17 14:20:50,234 [main] [INFO] - @Bean method App.beanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.

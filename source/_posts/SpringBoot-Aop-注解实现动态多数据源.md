@@ -229,6 +229,6 @@ controler添加测试方法
     }
 ```
 post测试：
-![](../images/NVWy.png)
+![](http://lolico.test.upcdn.net/images/NVWy.png)
 测试通过，打印日志:
-![](../images/N7a2.png)
+![](http://lolico.test.upcdn.net/images/N7a2.png)
