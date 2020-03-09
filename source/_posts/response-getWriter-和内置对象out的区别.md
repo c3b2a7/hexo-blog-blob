@@ -45,5 +45,9 @@ dddd aaaa bbbb cccc
 
 > 示例中的前三个方式，在jsp被翻译为servlet时，都会被翻译为out.write()方法，当我们向页面输出内容时，tomcat服务器会默认先刷新response缓冲区中的内容到网页中。而out对象本身也有个out缓冲区，前3个方法执行后要输出的内容先被存到out缓冲区内，然后再转移到response缓冲区中被tomcat服务器提取，因为JspWriter相当于一个带缓存功能的printWriter，它不是直接将数据输出到页面，而是将数据刷新到response的缓冲区后再输出。所以response.getWriter().print(String)直接输出数据，out.print(String)只能在其后输出。
 
+<<<<<<< HEAD
 ![](http://lolico.test.upcdn.net/images/qiLZ.png)
+=======
+![](https://i.loli.net/2020/03/09/3VY2X81pxcqTaeA.png)
+>>>>>>> 075af6abe4384f66a943568fca56258b1f49111d
 当然我们也可以让1、2、3的内容直接存到response缓冲区中。这是因为，out缓冲区可以通过指令buffer来设置它的缓存区大小，一般默认的是8kb，当我们设置为buffer=“0kb”时，就让out缓冲区存储空间为0，这样1、2、3方法输出的内容就会直接存到response缓冲区中。
