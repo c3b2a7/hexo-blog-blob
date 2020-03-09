@@ -229,6 +229,6 @@ controler添加测试方法
     }
 ```
 post测试：
-![](/images/NVWy.png)
+![](../images/NVWy.png)
 测试通过，打印日志:
-![](/images/N7a2.png)
+![](../images/N7a2.png)
