@@ -49,4 +49,4 @@ tags: [Java,Jsp]
 <br/>
 ```
 
-![示例](../images/qh4y.png)
+![示例](https://i.loli.net/2020/03/09/qSCI7lT9usjfpA6.png)

@@ -229,6 +229,6 @@ controler添加测试方法
     }
 ```
 post测试：
-![](../images/NVWy.png)
+![](https://i.loli.net/2020/03/09/ophckmj4yKtbXSH.png)
 测试通过，打印日志:
-![](../images/N7a2.png)
+![](https://i.loli.net/2020/03/09/KfLyP9hvY6M2nNk.png)

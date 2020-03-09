@@ -5,7 +5,7 @@ reward: true       # 禁用打赏，可选，默认开启
 ---
 ## 关于我(误
 
-![啵啵birdyヾ(≧▽≦*)o](../images/Wfv.jpg)
+![啵啵birdyヾ(≧▽≦*)o](https://i.loli.net/2020/03/09/uAf4YmqDGrdCa3F.jpg)
 
 ## 时间轴
 
