@@ -229,12 +229,6 @@ controler添加测试方法
     }
 ```
 post测试：
-<<<<<<< HEAD
 ![](http://lolico.test.upcdn.net/images/NVWy.png)
 测试通过，打印日志:
 ![](http://lolico.test.upcdn.net/images/N7a2.png)
-=======
-![](https://i.loli.net/2020/03/09/ophckmj4yKtbXSH.png)
-测试通过，打印日志:
-![](https://i.loli.net/2020/03/09/KfLyP9hvY6M2nNk.png)
->>>>>>> 075af6abe4384f66a943568fca56258b1f49111d

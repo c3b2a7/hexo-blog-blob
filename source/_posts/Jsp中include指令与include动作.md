@@ -49,8 +49,4 @@ tags: [Java,Jsp]
 <br/>
 ```
 
-<<<<<<< HEAD
 ![示例](http://lolico.test.upcdn.net/images/qh4y.png)
-=======
-![示例](https://i.loli.net/2020/03/09/qSCI7lT9usjfpA6.png)
->>>>>>> 075af6abe4384f66a943568fca56258b1f49111d

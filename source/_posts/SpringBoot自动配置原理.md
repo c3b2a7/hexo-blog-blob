@@ -17,11 +17,7 @@ Spring Boot的出现，得益于“约定大于配置”的理念，没有繁琐
 
 我们的各种属性都可以在这个文件中进行配置，最常配置的比如：`server.port`、`logging.level.*` 等等，然而我们实际用到的往往只是很少的一部分，那么这些属性是否有据可依呢？答案当然是肯定的，这些属性都可以在官方文档中查找到：[common-application-properties](https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#common-application-properties)
 
-<<<<<<< HEAD
 ![](http://lolico.test.upcdn.net/images/3zSS.png)
-=======
-![](https://i.loli.net/2020/03/09/aZo7kgqtiCfz6ds.png)
->>>>>>> 075af6abe4384f66a943568fca56258b1f49111d
 *（所以，话又说回来，找资料还得是官方文档，百度出来一大堆，还是稍显业余了一些）*
 除了官方文档为我们提供了大量的属性解释，我们也可以使用IDE的相关提示功能，比如IDEA的自动提示。
  以上，是Spring Boot的配置文件的大致使用方法，其实都是些题外话。
