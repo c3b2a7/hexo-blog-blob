@@ -5,11 +5,7 @@ reward: true       # 禁用打赏，可选，默认开启
 ---
 ## 关于我(误
 
-<<<<<<< HEAD
 ![啵啵birdyヾ(≧▽≦*)o](https://lolico.griouges.cn/images/Wfv.jpg)
-=======
-![啵啵birdyヾ(≧▽≦*)o](https://i.loli.net/2020/03/09/uAf4YmqDGrdCa3F.jpg)
->>>>>>> 075af6abe4384f66a943568fca56258b1f49111d
 
 ## 时间轴
 
