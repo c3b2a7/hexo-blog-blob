@@ -153,7 +153,7 @@ for (String s : its)
 **迭代出来的元素都是原集合元素的拷贝**
 Java集合中保存的元素实质是*对象的引用*(可以理解为C中的指针)，而非对象本身。
 迭代出的元素也就都是*引用的拷贝*，结果还是引用。那么，如果集合中保存的元素是可变类型的，我们就可以通过迭代出的元素修改原集合中的对象。而对于不可变类型，如`String`或者基本类型的包装类型`Integer`等则不会反应到原集合中。
-![](http://lolico.test.upcdn.net/images/qAWx.png)
+![](https://lolico.griouges.cn/images/qAWx.png)
 
 ### 测试样例2
 ```java
