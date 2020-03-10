@@ -7,7 +7,7 @@ tags: [Java,Spring,Web]
 
 ## 前言
 
-我们都知道，在一个请求被前端控制器``DispatchServlet`捕获后会经历下面几个流程：
+我们都知道，在一个请求被前端控制器`DispatchServlet`捕获后会经历下面几个流程：
 
 1. `DispatherServlet`根据请求URL解析获取请求URI，调用`HandlerMapping#getHandler`方法获取`HandlerExecutionChain`
 2. 获取返回的`HandlerExecutionChain`处理器执行链（包括处理器对象和拦截器对象）
