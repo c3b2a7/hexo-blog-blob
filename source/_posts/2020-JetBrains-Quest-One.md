@@ -2,7 +2,7 @@
 title: 2020年JetBrains Quest 第一弹
 categories: 不正常的文章
 date: 2020-03-13 15:53:12
-tags: ？？？
+tags: JetBrains Quest
 ---
 
 2020年3月9日，JetBrains官方推特发布了这么一条消息：

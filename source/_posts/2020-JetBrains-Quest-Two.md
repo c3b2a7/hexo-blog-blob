@@ -2,7 +2,7 @@
 title: 2020年JetBrains Quest 第二弹
 categories: 不正常的文章
 date: 2020-03-14 15:33:33
-tags: ？？？
+tags: JetBrains Quest
 ---
 
 2020年3月11，JetBrains Quest第二弹到来：
@@ -30,7 +30,7 @@ tags: ？？？
 
 ![](https://lolico.griouges.cn/images/20200314155326.png)
 
-还记的这个提示吗：
+还记得这个提示吗：
 
 > Look hard as when text is white, sometimes it is out of sight. Cmd/Ctrl+A helps.
 
