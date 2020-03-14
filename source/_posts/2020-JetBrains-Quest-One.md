@@ -1,5 +1,5 @@
 ---
-title: 2020年3月10日JetBrains解谜彩蛋
+title: 2020年JetBrains Quest 第一弹
 categories: 不正常的文章
 date: 2020-03-13 15:53:12
 tags: ？？？
@@ -31,7 +31,7 @@ tags: ？？？
 
 大概说的就是在3月15日欧洲中部时间12:00前完成谜题就可以拿到奖励，并且给了我们一个密钥：`Good luck! == Jrrg#oxfn$`
 
-*谜题*：JetBrains有很多产品，但是在我们的产品页面上有一个看起来像joke的产品，您应该从那里开始...（提示：使用谷歌无痕模式模式）
+*谜题*：JetBrains有很多产品，但是在我们的产品页面上有一个看起来像joke的产品，您应该从那里开始...（提示：使用谷歌无痕模式）
 
 谷歌浏览器无痕模式访问[JetBrains产品页](https://www.jetbrains.com/products.html)（实际上我不开无痕模式进入也是可以的）
 在产品里找到一个叫`JK`的产品，点击`Learn More`：
