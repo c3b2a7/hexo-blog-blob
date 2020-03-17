@@ -95,6 +95,9 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: indigo
 
+## themes/xx/_config.yml
+theme_config:
+
 # sitemap
 sitemap:
   path: sitemap.xml
