@@ -1,9 +1,9 @@
 layout: page
 title: About
-comments: true     # 禁用评论，可选，默认开启
-reward: true       # 禁用打赏，可选，默认开启
+comments: false     # 评论，可选，默认开启
+reward: true       # 打赏，可选，默认开启
 ---
-## 关于我(误
+## 关于我（雾
 
 ![啵啵birdyヾ(≧▽≦*)o](https://lolico.griouges.cn/images/Wfv.jpg)
 
@@ -25,7 +25,7 @@ reward: true       # 禁用打赏，可选，默认开启
 @item{
 
 ###### 10月1日
-学习SpringBoot，JPA，Shiro，SpringSecurity，Redis等Web后端框架技术
+学习SpringBoot，Spring全家桶等Web后端技术
 
 }
 
@@ -39,7 +39,7 @@ reward: true       # 禁用打赏，可选，默认开启
 @item{
 
 ###### 3月1日
-前端基础HTML，CSS，JS学习
+学习前端基础（HTML，CSS，JS）
 
 }
 
@@ -47,15 +47,15 @@ reward: true       # 禁用打赏，可选，默认开启
 
 @item{
 
-###### 8月9日
-搭建Chevereto图床
+###### 9月
+折腾服务器，搭建各种小站点
 
 }
 
 @item{
 
 ###### 8月6日
-基于typecho搭建个人博客，将博客园文章迁移
+基于typecho搭建个人博客
     
 }
 

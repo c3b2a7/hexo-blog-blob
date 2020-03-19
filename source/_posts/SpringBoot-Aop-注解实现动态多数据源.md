@@ -1,5 +1,5 @@
 ---
-title: SpringBoot-Aop+注解实现动态多数据源
+title: SpringBoot Aop+注解实现动态多数据源
 categories: 正常的文章
 date: 2020-01-17 18:43:19
 tags: [Java,Spring,SpringBoot]
