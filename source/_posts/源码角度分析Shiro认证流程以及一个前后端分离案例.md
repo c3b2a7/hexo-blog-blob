@@ -2,7 +2,7 @@
 title: 源码角度分析Shiro认证流程以及一个前后端分离案例
 categories: 正常的文章
 date: 2020-02-04 18:50:51
-tags: [Shiro,Web,安全]
+tags: [Shiro,Web,Security]
 ---
 
 从源码去分析认证流程前，你需要知道Shiro是什么，以及Shiro中的基本组件。在看本篇文章前，我假设你已经知道上述东西，并且后续的分析不会对这些组件是什么进行讲解。

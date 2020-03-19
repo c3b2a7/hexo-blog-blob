@@ -2,7 +2,7 @@
 title: 时间戳作为salt时的精度问题
 categories: 正常的文章
 date: 2020-01-23 18:46:22
-tags: [Java,密码加盐]
+tags: [Java,Password,Salt]
 ---
 
 ## 前言

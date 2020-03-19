@@ -2,7 +2,7 @@
 title: Shiro简介
 categories: 不正常的文章
 date: 2020-02-04 18:48:33
-tags: [Shiro,Web,安全]
+tags: [Shiro,Web,Security]
 ---
 
 > Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理。使用Shiro的易于理解的API,您可以快速、轻松地获得任何应用程序,从最小的移动应用程序到最大的网络和企业应用程序。
