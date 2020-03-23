@@ -1,0 +1,56 @@
+---
+title: 论如何用屎筑一座山
+categories: 不正常的文章
+date: 2020-03-23 11:57:06
+tags: ？？？
+---
+
+<!-- more -->
+
+*网课现场*
+
+```java
+public class Product {
+    // ...
+    private Integer sex;
+    private String sexView;
+    public static String[] SEXViews = new String[]{"女", "男"};  // #2-2
+
+    private Long date;
+    private String dateView;
+
+    public void setSex(Integer sex) {
+        this.sex = sex;
+        // switch (sex) { #1
+        //     ...
+        // }
+        this.sexView = SEXViews[sex]; // #2-1
+    }
+
+    public void setDate(Long date) {
+        this.date = date;
+        this.dateView = DateFormat.toShortString(date);
+    }
+    // ...
+}
+```
+
+你品，你细细的品。
+
+-----
+
+*货币需要格式化展示吗？*
+
+> 当然是不需要（误
+
+货币格式化某些场景下是要的。球球了，看下org.springframework.format包下的东西吧。我觉得`@NumberFormatter`，和`@CurrencyFormatter`用的少，所以也是情有可原。但用到`@DateFormatter`的时候就没去看看这个注解的包下还提供了什么注解或者接口吗？？？
+
+*......*
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+> 哎，无奈自己不想造屎山，但现实却是，总有一堆屎山交到自己手上。
