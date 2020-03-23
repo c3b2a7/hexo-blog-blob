@@ -17,11 +17,11 @@ tags: ？？？
 
 <br/>
 
-> *注意：*互联网并非法外之地
+> *注意：*互联网并非法外之地，且用且珍惜
 
 ### 方法一：系统代理PAC
 
-使用系统代理PAC解锁是最简单的方法，缺点是 Android 和 iOS 只能在连接WiFi的环境下使用。下面介绍不同平台系统代理设置方法。
+使用系统代理PAC解锁是最简单的方法，缺点是 android 和 ios 只能在连接WiFi的环境下使用。下面介绍不同平台系统代理设置方法。
 
 #### Windows
 
@@ -65,26 +65,37 @@ http://unblock.griouges.cn:39001/proxy.pac
 
 <br/>
 
-> 下面放上代理软件的使用步骤
+> 下面放上代理软件的使用步骤，请对号入座
 
 #### Clash for Windows
 
-1. 👇[安装软件](https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.9.2/Clash.for.Windows.Setup.0.9.2.exe)
+1. 👇[安装软件](https://lolico.griouges.cn/uploads/Clash.for.Windows.Setup.0.9.2.exe)
 2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2ffiles%2fsubscribe%2fClash%2fUnblockNeteaseMusic.yaml)
-3. 进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
-4. 😘Enjoy it!
+3. 进入「General」，开启「System Proxy」
+4. 进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
+5. 😘Enjoy it!
 
-#### ClashX
+#### ClashX for MacOS
 
-1. 👇[安装软件](https://github.com/yichengchen/clashX/releases/download/1.18.3/ClashX.dmg)
+1. 👇[安装软件](https://lolico.griouges.cn/uploads/ClashX.dmg)
 2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2ffiles%2fsubscribe%2fClash%2fUnblockNeteaseMusic.yaml)
 3. 😘Enjoy it!
 
 #### Clash for Android
 
-1. 👇[安装软件](https://github.com/Kr328/ClashForAndroid/releases/download/1.1.10/app-universal-release.apk)
+1. 👇[安装软件](https://lolico.griouges.cn/uploads/app-universal-release.apk)
 2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2ffiles%2fsubscribe%2fClash%2fUnblockNeteaseMusic.yaml)
 3. 😘Enjoy it!
+
+**鉴于安卓端`导入节点配置文件`可能无法调用Clash应用自动导入的问题，现可手动导入：**
+ 
+1. 进入Clash应用，点击配置 -> 新配置 -> URL导入
+2. 名称随意，url填入https://lolico.me/files/subscribe/Clash/UnblockNeteaseMusic.yaml
+3. 保存后应用此配置
+4. 回到主界面启动代理
+5. Enjoy it
+
+<br/>
 
 #### ios
 
