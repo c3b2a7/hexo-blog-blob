@@ -11,9 +11,11 @@ tags: ？？？
 
 ## 使用方法
 
+不想折腾的推荐`方式一`，但是只能用于wifi连接，流量不可用，否则选择`方式二`。
+
 使用前你需要知道：
 
-> 程序是部署在我个人服务器上的，并且服务端已限制：*仅允许代理网易云相关域名和ip的请求，其他请求一律丢弃。*由于服务器带宽只有1Mbps，所以速度不会超过128kb/s的，所以使用的人比较多时，可能会出现加载比较慢的现象，请不要进行下载操作，频繁占用服务器资源将会被ban，当然，你可以通过文末的打赏按钮对我进行打赏~（大雾
+> 程序部署在服务器上，并且服务端已做限制：*仅允许代理网易云相关域名和ip的请求，其他请求一律丢弃。*由于服务器带宽只有5Mbps，所以速度不会超过640kb/s，如果使用的人比较多，可能出现加载比较慢的现象。建议网易云音乐内开启**自动缓存**，常听的歌建议**下载到本地**。当然，你也可以通过文末的打赏按钮对我进行打赏~（大雾
 
 <br/>
 
@@ -21,14 +23,15 @@ tags: ？？？
 
 ### 方法一：系统代理PAC
 
-使用系统代理PAC解锁是最简单的方法，缺点是 android 和 ios 只能在连接WiFi的环境下使用。下面介绍不同平台系统代理设置方法。
+使用系统代理PAC解锁是最简单的方法，缺点是 android 和 ios 只能在连接WiFi的环境下使用。下面介绍不同平台系统代理设置方法（连接二选一即可）
 
 #### Windows
 
 以 Windows 10 为例，进入「Windows 设置」>「网络和 Internet」>「代理」>「自动设置代理」>「使用设置脚本」，填写以下地址：
 
 ```txt
-http://music.griouges.cn:39000/proxy.pac
+首选：http://music.desperadoj.com:30000/proxy.pac
+备用：http://music.griouges.cn:39000/proxy.pac
 ```
 
 进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
@@ -38,7 +41,8 @@ http://music.griouges.cn:39000/proxy.pac
 进入「系统偏好设置」>「网络」>「高级」>「代理」，填写以下地址：
 
 ```txt
-http://music.griouges.cn:39000/proxy.pac
+首选：http://music.desperadoj.com:30000/proxy.pac
+备用：http://music.griouges.cn:39000/proxy.pac
 ```
 
 #### android
@@ -46,7 +50,8 @@ http://music.griouges.cn:39000/proxy.pac
 进入「设置」>「WLAN」>「修改网络」>「高级选项」>「代理」>「代理自动配置」（不同机型设置的地方不一样，也可能在wifi右边的感叹号中），填写以下地址：
 
 ```txt
-http://music.griouges.cn:39000/proxy.pac
+首选：http://music.desperadoj.com:30000/proxy.pac
+备用：http://music.griouges.cn:39000/proxy.pac
 ```
 
 #### ios
@@ -56,7 +61,8 @@ http://music.griouges.cn:39000/proxy.pac
 其次在「设置」>「无线局域网」>「当前连接网络」>「HTTP 代理」>「配置代理」>「自动」，填写以下地址：
 
 ```txt
-http://music.griouges.cn:39000/proxy.pac
+首选：http://music.desperadoj.com:30002/proxy.pac
+备用：http://music.griouges.cn:39000/proxy.pac
 ```
 
 ### 方法二：代理软件
@@ -71,8 +77,8 @@ http://music.griouges.cn:39000/proxy.pac
 
 1. 👇[安装软件](https://lolico.griouges.cn/uploads/Clash.for.Windows.Setup.0.9.2.exe)
 2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2ffiles%2fsubscribe%2fClash%2fUnblockNeteaseMusic.yaml)
-3. 进入「General」，开启「System Proxy」
-4. 进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
+3. 👉进入「General」，开启「System Proxy」
+4. 👉进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
 5. 😘Enjoy it!
 
 #### ClashX for MacOS
@@ -81,6 +87,7 @@ http://music.griouges.cn:39000/proxy.pac
 2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2ffiles%2fsubscribe%2fClash%2fUnblockNeteaseMusic.yaml)
 3. 😘Enjoy it!
 
+> Windows 和 Mac 备用Clash配置文件👉[一键导入](clash://install-config?url=https%3a%2f%2fraw.githubusercontent.com%2fDesperadoJ%2fRules-for-UnblockNeteaseMusic%2fmaster%2fClash%2fUnblockNeteaseMusic.yaml)
 #### Clash for Android
 
 1. 👇[安装软件](https://lolico.griouges.cn/uploads/app-universal-release.apk)
@@ -90,7 +97,8 @@ http://music.griouges.cn:39000/proxy.pac
 **鉴于安卓端`导入节点配置文件`可能无法调用Clash应用自动导入的问题，现可手动导入：**
  
 1. 进入Clash应用，点击配置 -> 新配置 -> URL导入
-2. 名称随意，url填入https://lolico.me/files/subscribe/Clash/UnblockNeteaseMusic.yaml
+2. 名称随意，url首选https://raw.githubusercontent.com/DesperadoJ/Rules-for-UnblockNeteaseMusic/master/Clash/UnblockNeteaseMusic.yaml
+其次https://lolico.me/files/subscribe/Clash/UnblockNeteaseMusic.yaml
 3. 保存后应用此配置
 4. 回到主界面启动代理
 5. Enjoy it
@@ -107,12 +115,7 @@ http://music.griouges.cn:39000/proxy.pac
 
 - Quantumult
     1. 👇[安装软件](https://apps.apple.com/us/app/quantumult/id1252015438)
-    2. 👉~~[点击导入节点配置文件]()~~
-    3. 😘Enjoy it!
-
-- QuantumultX
-    1. 👇[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
-    2. 👉~~[点击导入节点配置文件]()~~
+    2. 👉[点击导入节点配置文件](quantumult://configuration?server=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0Rlc3BlcmFkb0ovUnVsZXMtZm9yLVVuYmxvY2tOZXRlYXNlTXVzaWMvbWFzdGVyL1F1YW50dW11bHQvcXVhbnR1bXVsdC1zZXJ2ZXIudHh0&filter=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0Rlc3BlcmFkb0ovUnVsZXMtZm9yLVVuYmxvY2tOZXRlYXNlTXVzaWMvbWFzdGVyL1F1YW50dW11bHQvVW5ibG9ja05ldGVhc2VNdXNpYy5jb25m)
     3. 😘Enjoy it!
 
 
