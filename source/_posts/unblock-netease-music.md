@@ -28,7 +28,7 @@ tags: ？？？
 以 Windows 10 为例，进入「Windows 设置」>「网络和 Internet」>「代理」>「自动设置代理」>「使用设置脚本」，填写以下地址：
 
 ```txt
-http://unblock.griouges.cn:39001/proxy.pac
+http://music.griouges.cn:39000/proxy.pac
 ```
 
 进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
@@ -38,7 +38,7 @@ http://unblock.griouges.cn:39001/proxy.pac
 进入「系统偏好设置」>「网络」>「高级」>「代理」，填写以下地址：
 
 ```txt
-http://unblock.griouges.cn:39001/proxy.pac
+http://music.griouges.cn:39000/proxy.pac
 ```
 
 #### android
@@ -46,7 +46,7 @@ http://unblock.griouges.cn:39001/proxy.pac
 进入「设置」>「WLAN」>「修改网络」>「高级选项」>「代理」>「代理自动配置」（不同机型设置的地方不一样，也可能在wifi右边的感叹号中），填写以下地址：
 
 ```txt
-http://unblock.griouges.cn:39001/proxy.pac
+http://music.griouges.cn:39000/proxy.pac
 ```
 
 #### ios
@@ -56,7 +56,7 @@ http://unblock.griouges.cn:39001/proxy.pac
 其次在「设置」>「无线局域网」>「当前连接网络」>「HTTP 代理」>「配置代理」>「自动」，填写以下地址：
 
 ```txt
-http://unblock.griouges.cn:39001/proxy.pac
+http://music.griouges.cn:39000/proxy.pac
 ```
 
 ### 方法二：代理软件
@@ -128,10 +128,14 @@ http://unblock.griouges.cn:39001/proxy.pac
 
     无法缓冲的问题一般是由于网络造成的，请重试，如果还是不行，可能服务器也没找到资源。
 
-3. 导入配置文件的链接点了没反应啊？
+3. 为什么代理设置并且开启后，登录网易云音乐时提示无网络连接？
+
+    关闭代理后登录，登陆进入了再开启代理。
+
+4. 导入配置文件的链接点了没反应啊？
 
     首先确保已下载代理软件，再尝试，安卓可能出现下载了软件还是无法导入的情况，请手动导入，见1.2.3节Clash for Android
 
-4. 为什么安卓系统代理没找到输入地址的地方？
+5. 为什么安卓系统代理没找到输入地址的地方？
 
     不同机型设置代理的地方不一样，可能在高级设置中也可能在wifi右边的感叹号中，确保代理方式选择自动代理。

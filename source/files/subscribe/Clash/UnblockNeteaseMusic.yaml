@@ -1,5 +1,5 @@
 #---------------------------------------------------#
-## 更新：2020-03-23
+## 更新：2020-03-24
 ## 链接：https://lolico.me/files/subscribe/Clash/UnblockNeteaseMusic.yaml
 #---------------------------------------------------#
 
@@ -34,8 +34,8 @@ secret: ''
 Proxy:
   - name: 🎶 解锁
     type: http
-    server: unblock.griouges.cn
-    port: 39001
+    server: music.griouges.cn
+    port: 39000
 
 Proxy Group:
   - name: 🎵 网易云音乐
