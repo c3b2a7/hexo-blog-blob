@@ -113,10 +113,16 @@ tags: ？？？
     3. 👉[点击导入配置](shadowrocket://config/add/https://lolico.me/files/subscribe/Shadowrocket/UnblockNeteaseMusic.conf)
     4. 😘Enjoy it!
 
-- Quantumult
-    1. 👇[安装软件](https://apps.apple.com/us/app/quantumult/id1252015438)
-    2. 👉[点击导入节点配置文件](quantumult://configuration?server=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0Rlc3BlcmFkb0ovUnVsZXMtZm9yLVVuYmxvY2tOZXRlYXNlTXVzaWMvbWFzdGVyL1F1YW50dW11bHQvcXVhbnR1bXVsdC1zZXJ2ZXIudHh0&filter=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0Rlc3BlcmFkb0ovUnVsZXMtZm9yLVVuYmxvY2tOZXRlYXNlTXVzaWMvbWFzdGVyL1F1YW50dW11bHQvVW5ibG9ja05ldGVhc2VNdXNpYy5jb25m)
-    3. 😘Enjoy it!
+- QuantumultX
+    1. 👇[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
+    2. 👉添加节点：https://lolico.me/files/subscribe/QuantumultX/UnblockNeteaseMusic.list
+    3. 👉添加分流：https://lolico.me/files/subscribe/QuantumultX/NeteaseMusicFilter.list
+    4. 创建策略：（[policy]中填入以下内容）
+    ```
+    static=🔓网易云音乐, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
+    ```
+    5. 主界面长按🔓网易云音乐策略右上角，添加解锁节点
+    6. 😘Enjoy it!
 
 
 > *注意：*如果节点测试延迟显示`timeout/超时`是正常的，服务端只会通过网易云相关域名和ip的请求
