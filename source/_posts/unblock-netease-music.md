@@ -121,7 +121,7 @@ tags: ？？？
     static=🔓网易云音乐, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
     ```
     4. 👉添加分流：https://lolico.me/files/subscribe/QuantumultX/NeteaseMusicFilter.list 并绑定到`🔓网易云音乐`策略
-    5. 主界面长按🔓网易云音乐策略右上角，添加解锁节点
+    5. 主界面长按`🔓网易云音乐`右上角，添加解锁节点
     6. 😘Enjoy it!
 
 
