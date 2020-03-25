@@ -116,11 +116,11 @@ tags: ？？？
 - QuantumultX
     1. 👇[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
     2. 👉添加节点：https://lolico.me/files/subscribe/QuantumultX/UnblockNeteaseMusic.list
-    3. 👉添加分流：https://lolico.me/files/subscribe/QuantumultX/NeteaseMusicFilter.list
-    4. 创建策略：（[policy]中填入以下内容）
+    3. 创建策略：（[policy]部分填入以下内容）
     ```
     static=🔓网易云音乐, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
     ```
+    4. 👉添加分流：https://lolico.me/files/subscribe/QuantumultX/NeteaseMusicFilter.list 并绑定到`🔓网易云音乐`策略
     5. 主界面长按🔓网易云音乐策略右上角，添加解锁节点
     6. 😘Enjoy it!
 
