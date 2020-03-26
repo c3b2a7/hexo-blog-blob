@@ -1,6 +1,6 @@
 ---
 title: 解锁网易云音乐
-categories: 正常的文章
+categories: 不正常的文章
 date: 2020-03-23 18:26:55
 tags: ？？？
 ---
@@ -113,19 +113,26 @@ tags: ？？？
     3. 👉[点击导入配置](shadowrocket://config/add/https://lolico.me/files/subscribe/Shadowrocket/UnblockNeteaseMusic.conf)
     4. 😘Enjoy it!
 
-- QuantumultX
+- QuantumultX 方式一（不影响其他配置）
     1. 👇[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
     2. 👉添加节点：https://lolico.me/files/subscribe/QuantumultX/UnblockNeteaseMusic.list
-    3. 创建策略：（[policy]部分填入以下内容）
+    3. 👉创建策略：（`[policy]`部分填入以下内容）
     ```
-    static=🔓网易云音乐, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
+        static=🎸解锁网易云音乐, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
     ```
-    4. 👉添加分流：https://lolico.me/files/subscribe/QuantumultX/NeteaseMusicFilter.list 并绑定到`🔓网易云音乐`策略
-    5. 主界面长按`🔓网易云音乐`右上角，添加解锁节点
+    4. 👉添加分流规则：https://lolico.me/files/subscribe/QuantumultX/NeteaseMusicFilter.list 开启策略偏好并绑定到`🎸解锁网易云音乐`策略
+    5. 主界面长按`🎸解锁网易云音乐`右上角，添加解锁节点
     6. 😘Enjoy it!
 
+- QuantumultX 方式二（导入全局配置文件）
+    1. 👇[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
+    2. 👉进入应用 -> 点击右下角圆圈 -> 滑至底部 -> 点击下载
+    3. 👉填入地址：https://lolico.me/files/subscribe/QuantumultX/pro.conf
+    4. 😘Enjoy it!
 
-> *注意：*如果节点测试延迟显示`timeout/超时`是正常的，服务端只会通过网易云相关域名和ip的请求
+建议直接*导入全局配置文件*，其中还包含了**去广告**的配置（默认启用），和一个**解锁b站大会员**的可选配置（*默认禁用，直接开启无效*，py解锁🙄）
+
+> *注意：*如果测试节点真实延迟显示`timeout/超时`是正常的，服务端只会通过网易云相关域名和ip的请求
 
 ## FAQ
 
