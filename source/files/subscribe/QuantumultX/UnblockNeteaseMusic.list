@@ -1,2 +1,0 @@
-http = music.griouges.cn:39000, tag =🎵 网易云音乐(备用)
-shadowsocks=music.desperadoj.com:30003, method=aes-128-gcm, password=desperadoj.com, fast-open=false, udp-relay=false, tag=🎵 网易云音乐

@@ -5,13 +5,11 @@ date: 2020-03-23 18:26:55
 tags: ？？？
 ---
 
-<!-- more -->
+<！-- more -->
+
+## 前言
 
 通过配置下文中的代理，实现解锁网易云无版权音乐以及部分试听音乐。
-
-## 使用方法
-
-不想折腾的推荐`方式一`，但是只能用于wifi连接，流量不可用，否则选择`方式二`。
 
 使用前你需要知道：
 
@@ -20,6 +18,11 @@ tags: ？？？
 <br/>
 
 > *注意：互联网并非法外之地，且用且珍惜*
+
+
+## 使用方法
+
+现提供两种方法，不想折腾的推荐`方式一`，但是只能用于wifi连接，流量不可用，否则选择`方式二`（本人更推荐方式二）。
 
 ### 方法一：系统代理PAC
 
@@ -30,8 +33,7 @@ tags: ？？？
 以 Windows 10 为例，进入「Windows 设置」>「网络和 Internet」>「代理」>「自动设置代理」>「使用设置脚本」，填写以下地址：
 
 ```txt
-首选：http://music.desperadoj.com:30000/proxy.pac
-备用：http://music.griouges.cn:39000/proxy.pac
+http://music.griouges.cn:39000/proxy.pac
 ```
 
 进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
@@ -41,8 +43,7 @@ tags: ？？？
 进入「系统偏好设置」>「网络」>「高级」>「代理」，填写以下地址：
 
 ```txt
-首选：http://music.desperadoj.com:30000/proxy.pac
-备用：http://music.griouges.cn:39000/proxy.pac
+http://music.griouges.cn:39000/proxy.pac
 ```
 
 #### android
@@ -50,8 +51,7 @@ tags: ？？？
 进入「设置」>「WLAN」>「修改网络」>「高级选项」>「代理」>「代理自动配置」（不同机型设置的地方不一样，也可能在wifi右边的感叹号中），填写以下地址：
 
 ```txt
-首选：http://music.desperadoj.com:30000/proxy.pac
-备用：http://music.griouges.cn:39000/proxy.pac
+http://music.griouges.cn:39000/proxy.pac
 ```
 
 #### ios
@@ -61,8 +61,7 @@ tags: ？？？
 其次在「设置」>「无线局域网」>「当前连接网络」>「HTTP 代理」>「配置代理」>「自动」，填写以下地址：
 
 ```txt
-首选：http://music.desperadoj.com:30002/proxy.pac
-备用：http://music.griouges.cn:39000/proxy.pac
+http://music.griouges.cn:39000/proxy.pac
 ```
 
 ### 方法二：代理软件
@@ -75,83 +74,104 @@ tags: ？？？
 
 #### Clash for Windows
 
-1. 👇[安装软件](https://lolico.griouges.cn/uploads/Clash.for.Windows.Setup.0.9.2.exe)
-2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2ffiles%2fsubscribe%2fClash%2fUnblockNeteaseMusic.yaml)
+1. 👉[安装软件](https://lolico.griouges.cn/uploads/Clash.for.Windows.Setup.0.9.2.exe)
+2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
 3. 👉进入「General」，开启「System Proxy」
 4. 👉进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
-5. 😘Enjoy it!
+5. 😘Enjoy it！
 
 #### ClashX for MacOS
 
-1. 👇[安装软件](https://lolico.griouges.cn/uploads/ClashX.dmg)
-2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2ffiles%2fsubscribe%2fClash%2fUnblockNeteaseMusic.yaml)
-3. 😘Enjoy it!
+1. 👉[安装软件](https://lolico.griouges.cn/uploads/ClashX.dmg)
+2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
+3. 😘Enjoy it！
 
-> Windows 和 Mac 备用Clash配置文件👉[一键导入](clash://install-config?url=https%3a%2f%2fraw.githubusercontent.com%2fDesperadoJ%2fRules-for-UnblockNeteaseMusic%2fmaster%2fClash%2fUnblockNeteaseMusic.yaml)
 #### Clash for Android
 
-1. 👇[安装软件](https://lolico.griouges.cn/uploads/app-universal-release.apk)
-2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2ffiles%2fsubscribe%2fClash%2fUnblockNeteaseMusic.yaml)
-3. 😘Enjoy it!
+1. 👉[安装软件](https://lolico.griouges.cn/uploads/app-universal-release.apk)
+2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
+3. 👉保存后应用此配置
+4. 👉回到主界面启动代理
+5. 😘Enjoy it！
 
-**鉴于安卓端`导入节点配置文件`可能无法调用Clash应用自动导入的问题，现可手动导入：**
- 
-1. 进入Clash应用，点击配置 -> 新配置 -> URL导入
-2. 名称随意，url首选https://raw.githubusercontent.com/DesperadoJ/Rules-for-UnblockNeteaseMusic/master/Clash/UnblockNeteaseMusic.yaml
-其次https://lolico.me/files/subscribe/Clash/UnblockNeteaseMusic.yaml
-3. 保存后应用此配置
-4. 回到主界面启动代理
-5. Enjoy it
+**注意：**
+
+鉴于安卓端`导入节点配置文件`可能无法调用Clash应用自动导入的问题，提供*手动导入*方法：
+
+1. 👉进入Clash应用，点击配置 -> 新配置 -> URL导入
+2. 👉名称随意，url填入`https://lolico.me/subscribe/Clash/config.yaml`
+3. 👉保存后应用此配置
+4. 👉回到主界面启动代理
+5. 😘Enjoy it！
 
 <br/>
 
+*^ Clash配置中有多个节点，当某个节点不可用时，自行切换至其他节点（怎么切换节点我就不多说了，自己琢磨下软件）。*
+
 #### ios
 
-- Shadowrocket
-    1. 👇[安装软件](https://apps.apple.com/us/app/shadowrocket/id932747118)
-    2. 👉[点击导入节点](shadowrocket://add/sub://aHR0cHM6Ly9sb2xpY28ubWUvZmlsZXMvc3Vic2NyaWJlL1NoYWRvd3JvY2tldC9zaGFkb3dyb2NrZXQtc2VydmVyLnR4dA#UnblockNeteaseMusic)
-    3. 👉[点击导入配置](shadowrocket://config/add/https://lolico.me/files/subscribe/Shadowrocket/UnblockNeteaseMusic.conf)
-    4. 😘Enjoy it!
+ios端提供`Shadowrocket`和`QuantumultX`软件的订阅，至于其他客户端，自行根据配置文件修改。
 
-- QuantumultX 方式一（不影响其他配置）
-    1. 👇[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
-    2. 👉添加节点：https://lolico.me/files/subscribe/QuantumultX/UnblockNeteaseMusic.list
+##### Shadowrocket
+
+1. 👉[安装软件](https://apps.apple.com/us/app/shadowrocket/id932747118)
+2. 👉[点击导入节点](shadowrocket://add/sub://aHR0cHM6Ly9sb2xpY28ubWUvc3Vic2NyaWJlL1NoYWRvd3JvY2tldC9zZXJ2ZXIudHh0#%F0%9F%8E%B8%E8%A7%A3%E9%94%81%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90)
+3. 👉[点击导入配置](shadowrocket://config/add/https://lolico.me/subscribe/Shadowrocket/rules.conf)
+4. 😘Enjoy it！
+
+##### QuantumultX
+
+- 方式一（导入全局配置文件）【推荐】
+    1. 👉[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
+    2. 👉进入应用 -> 点击右下角圆圈 -> 滑至底部 -> 点击下载
+    3. 👉填入地址：`https://lolico.me/subscribe/QuantumultX/pro.conf`
+    4. 😘Enjoy it！
+
+- 方式二（自行修改配置文件）
+    1. 👉[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
+    2. 👉添加节点订阅：`https://lolico.me/subscribe/QuantumultX/NeteaseMusicServer.list`
     3. 👉创建策略：（`[policy]`部分填入以下内容）
     ```
         static=🎸解锁网易云音乐, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
     ```
-    4. 👉添加分流规则：https://lolico.me/files/subscribe/QuantumultX/NeteaseMusicFilter.list 开启策略偏好并绑定到`🎸解锁网易云音乐`策略
-    5. 主界面长按`🎸解锁网易云音乐`右上角，添加解锁节点
-    6. 😘Enjoy it!
+    4. 👉添加分流规则：`https://lolico.me/subscribe/QuantumultX/NeteaseMusicFilter.list`开启策略偏好并绑定到`🎸解锁网易云音乐`策略
+    5. 👉主界面长按`🎸解锁网易云音乐`右上角，添加解锁节点
+    6. 😘Enjoy it！
 
-- QuantumultX 方式二（导入全局配置文件）
-    1. 👇[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
-    2. 👉进入应用 -> 点击右下角圆圈 -> 滑至底部 -> 点击下载
-    3. 👉填入地址：https://lolico.me/files/subscribe/QuantumultX/pro.conf
-    4. 😘Enjoy it!
+建议选择方式一*导入全局配置文件*，其中还包含了**去广告**的配置（默认启用），和一个**解锁b站大会员**的可选配置（*默认禁用，直接开启无效*，py解锁🙄）
 
-建议直接*导入全局配置文件*，其中还包含了**去广告**的配置（默认启用），和一个**解锁b站大会员**的可选配置（*默认禁用，直接开启无效*，py解锁🙄）
+> 部分解锁节点来自telegram频道，如有侵权，请联系删除，谢谢！
+
+<br/>
 
 > *注意：*如果测试节点真实延迟显示`timeout/超时`是正常的，服务端只会通过网易云相关域名和ip的请求
 
 ## FAQ
 
 1. 为什么开启后，听数字专辑中的歌还是提示要购买？
-    
+
     直接搜出来的数字专辑中的歌曲是不能直接听的，需要到专辑中听。
 
 2. 为什么提示无法缓冲？
 
-    无法缓冲的问题一般是由于网络造成的，请重试，如果还是不行，可能服务器也没找到资源。
+    无法缓冲的问题一般是由于网络造成的，请换个网络或者更换节点，如果还是不行，那我也没办法了。
 
 3. 为什么代理设置并且开启后，登录网易云音乐时提示无网络连接？
 
-    关闭代理后登录，登陆进入了再开启代理。
+    先关闭代理登录，进入后再开启代理。
 
-4. 导入配置文件的链接点了没反应啊？
+4. 为什么点击导入节点配置文件没反应啊？
 
     首先确保已下载代理软件，再尝试，安卓可能出现下载了软件还是无法导入的情况，请手动导入，见1.2.3节Clash for Android
 
 5. 为什么安卓系统代理没找到输入地址的地方？
 
     不同机型设置代理的地方不一样，可能在高级设置中也可能在wifi右边的感叹号中，确保代理方式选择自动代理。
+
+6. 为什么打开代理后某些网站或应用加载不出资源？
+
+    规则代理是根据请求的特征来进行匹配，看是否需要代理，所以说相比不开代理理论上是会有延迟（但基本忽略不计），并且上面给出的配置十分精简，如果感觉到有明显的网络延迟并且能确定不是因为自己网络较差所造成，请在**必要时**再开启代理，日常上网关闭即可。
+
+7. 这写的都是啥？
+
+    ...
