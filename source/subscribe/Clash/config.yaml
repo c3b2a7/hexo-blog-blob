@@ -1,6 +1,6 @@
 #---------------------------------------------------#
-## 更新：2020-03-28
-## 链接：https://lolico.me/subscribe/Clash/UnblockNeteaseMusic.yaml
+## 更新：2020-04-01
+## 链接：https://lolico.me/subscribe/Clash/config.yaml
 #---------------------------------------------------#
 
 # HTTP 代理端口
@@ -20,7 +20,7 @@ mode: Rule
 
 # 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
 # 5 个级别：silent / info / warning / error / debug 级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
-log-level: silent
+log-level: info
 # Clash 的 RESTful API
 external-controller: '0.0.0.0:9090'
 

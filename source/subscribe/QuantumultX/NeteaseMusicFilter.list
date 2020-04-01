@@ -1,9 +1,9 @@
-HOST,api.iplay.163.com,网易云音乐
-HOST,apm3.music.163.com,网易云音乐
-HOST,apm.music.163.com,网易云音乐
-HOST,interface3.music.163.com,网易云音乐
-HOST,interface.music.163.com,网易云音乐
 HOST,music.163.com,网易云音乐
+HOST,api.iplay.163.com,网易云音乐
+HOST,apm.music.163.com,网易云音乐
+HOST,apm3.music.163.com,网易云音乐
+HOST,interface.music.163.com,网易云音乐
+HOST,interface3.music.163.com,网易云音乐
 IP-CIDR,39.105.63.80/32,网易云音乐
 IP-CIDR,45.254.48.1/32,网易云音乐
 IP-CIDR,47.100.127.239/32,网易云音乐
