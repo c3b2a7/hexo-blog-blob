@@ -118,25 +118,25 @@ http://music.griouges.cn:39000/proxy.pac
 
 - 方式一（导入全局配置文件）【推荐】
     1. 👉[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
-    2. 👉进入应用 -> 点击右下角圆圈 -> 滑至底部 -> 点击下载
+    2. 👉进入应用 -> 点击右下角 -> 滑至底部 -> 下载
     3. 👉填入地址：`https://lolico.me/subscribe/QuantumultX/pro.conf`
     4. 😘Enjoy it！
 
 - 方式二（自行修改配置文件）
     1. 👉[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
-    2. 👉添加节点订阅：（`[server_remote]`）
+    2. 👉进入应用 -> 点击右下角 -> 滑至底部 -> 编辑
+    3. 👉在相应位置添加以下配置：
     ```
-    https://lolico.me/subscribe/QuantumultX/NeteaseMusicServer.txt, tag=Netease Music, enabled=true, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
-    ```
-    3. 👉创建策略：（`[policy]`）
-    ```
+    [policy]
     static=🎸解锁网易云音乐, direct, 🎵 解锁节点1, 🎵 解锁节点2, 🎵 解锁节点3, 🎵 解锁节点4, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
-    ```
-    4. 👉添加分流规则：（`[filter_remote]`）
-    ```
+
+    [server_remote]
+    https://lolico.me/subscribe/QuantumultX/NeteaseMusicServer.txt, tag=Netease Music, enabled=true, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
+
+    [filter_remote]
     https://lolico.me/subscribe/QuantumultX/NeteaseMusicFilter.txt, tag=🎸解锁网易云音乐, force-policy=🎸解锁网易云音乐, enabled=true
     ```
-    5. 😘Enjoy it！
+    4. 😘Enjoy it！
 
 建议选择方式一*导入全局配置文件*，其中还包含了**去广告**的配置（默认启用），和一个**解锁b站大会员**的可选配置（*默认禁用，直接开启无效*）
 
