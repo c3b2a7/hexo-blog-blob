@@ -124,14 +124,19 @@ http://music.griouges.cn:39000/proxy.pac
 
 - 方式二（自行修改配置文件）
     1. 👉[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
-    2. 👉添加节点订阅：`https://lolico.me/subscribe/QuantumultX/NeteaseMusicServer.list`
-    3. 👉创建策略：（`[policy]`部分填入以下内容）
+    2. 👉添加节点订阅：（`[server_remote]`）
     ```
-        static=🎸解锁网易云音乐, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
+    https://lolico.me/subscribe/QuantumultX/NeteaseMusicServer.txt, tag=Netease Music, enabled=true, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
     ```
-    4. 👉添加分流规则：`https://lolico.me/subscribe/QuantumultX/NeteaseMusicFilter.list`开启策略偏好并绑定到`🎸解锁网易云音乐`策略
-    5. 👉主界面长按`🎸解锁网易云音乐`右上角，添加解锁节点
-    6. 😘Enjoy it！
+    3. 👉创建策略：（`[policy]`）
+    ```
+    static=🎸解锁网易云音乐, direct, 🎵 解锁节点1, 🎵 解锁节点2, 🎵 解锁节点3, 🎵 解锁节点4, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
+    ```
+    4. 👉添加分流规则：（`[filter_remote]`）
+    ```
+    https://lolico.me/subscribe/QuantumultX/NeteaseMusicFilter.txt, tag=🎸解锁网易云音乐, force-policy=🎸解锁网易云音乐, enabled=true
+    ```
+    5. 😘Enjoy it！
 
 建议选择方式一*导入全局配置文件*，其中还包含了**去广告**的配置（默认启用），和一个**解锁b站大会员**的可选配置（*默认禁用，直接开启无效*）
 
