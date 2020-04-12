@@ -99,13 +99,13 @@ public class UserController {
 ```
 在①处标注的`@SessionAttributes("user")`会自动将本处理器的任何处理方法中属性名为user的模型属性透明地存储到`HttpSession`中。在②处，`handler1`方法的user入参会添加到隐含模型中，于是这个模型属性在`handle1`方法执行时，SpringMVC会将其透明的保存到`HttpSession`中。
 
-`handle1`返回的逻辑视图名为*redirect:/user/h2*，重定向发送另一个请求。而这个请求由`handle2`方法负责处理。两个处理方法位于不同的请求上下文中，之所以`handle2`可以获取名为user的模型属性，就是因为`@SessionAttributes("user")`透明的将`handle1`的user模型属性存储到`HttpSession`中，而`handler2`的隐含模型又自动从`HttpSession`中获取到这个模型属性。（PS:一般这种情况我们使用**forWard**转发，这里重定向是为了演示`@SessionAttributes`注解在不同请求上下文中共享**模型属性**的作用）
+`handle1`返回的逻辑视图名为*redirect:/user/h2*，重定向发送另一个请w求。而这个请求由`handle2`方法负责处理。两个处理方法位于不同的请求上下文中，之所以`handle2`可以获取名为user的模型属性，就是因为`@SessionAttributes("user")`透明的将`handle1`的user模型属性存储到`HttpSession`中，而`handler2`的隐含模型又自动从`HttpSession`中获取到这个模型属性。（PS：一般这种情况我们使用**forward**转发，这里重定向是为了演示`@SessionAttributes`注解在不同请求上下文中共享**模型属性**的作用）
 
 `handle2`方法还包含一个`SessionStatus`对象，当调用`SessionStatus#setComplete`方法，SpringMVC会清除控制器类的所有会话属性；否则这个会话属性会一直保存在`HttpSession`中，这也是为什么说`@SessionAttributes`是将模型属性**暂存**到`HttpSession`中的原因。
 
 > 我们也可以通过`HttpSession#removeAttribute(String name)`方法手动删除会话属性，但是需要提供属性名，硬编码是不提倡且不方便的。
 
-很可惜，当向`/h1`发送请求时，SpringMVC会抛出异常：
+讲了这么多，但是很可惜，当向`/h1`发送请求时，SpringMVC抛出异常：
 
 > HttpSessionRequiredException: Session attribute 'user' required - not found in session
 
@@ -113,9 +113,9 @@ public class UserController {
 
 原来SpringMVC对`@ModelAttribute`、`@SessionAttributes`的处理遵循一个流程，当流程条件不满足时就会报错。处理流程简单说明如下：
 
-1. SpringMVC再调用处理方法前，在请求的线程中**自动创建**一个隐含的模型对象。
+1. SpringMVC在调用处理方法前，在请求的线程中**自动创建**一个隐含的模型对象。
 
-2. 调用所用标注了`@ModelAttribute`的方法，并将方法返回值添加到隐含对象。
+2. 调用所有标注了`@ModelAttribute`的方法，并将方法返回值添加到隐含对象。
 
 3. 查看`Session`中是否存在`@SessionAttributes("xxx")`所指定的xxx属性，如果有，则将其**添加**到隐含模型中。如果模型中已有xxx属性，则覆盖已有的。
 
