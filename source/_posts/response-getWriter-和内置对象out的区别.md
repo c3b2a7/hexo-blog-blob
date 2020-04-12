@@ -2,7 +2,7 @@
 title: response.getWriter()和内置对象out的区别
 categories: 正常的文章
 date: 2018-11-03 16:25:16
-tags: [Java,Jsp,Web]
+tags: [Java,JSP,Web]
 ---
 
 **首先我们需要知道的是:**
