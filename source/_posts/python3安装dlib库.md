@@ -2,7 +2,7 @@
 title: python3安装dlib库
 categories: 正常的文章
 date: 2020-04-12 14:44:09
-tags: [Python,pip]
+tags: [Python,pip,dlib]
 ---
 
 python3编译安装dlib库十分麻烦，这里提供已经编译好的whl文件，使用pip直接安装即可。
