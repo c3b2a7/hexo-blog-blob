@@ -130,5 +130,5 @@ neat_js:
 deploy:
   type: git
   repo:
-    github: https://github.com/LOLICOL1/lolicol1.github.io.git
+    github: git@github.com:LOLICOL1/lolicol1.github.io.git
   branch: master
