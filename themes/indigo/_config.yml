@@ -122,15 +122,15 @@ gitment: false
 #   client_secret:
 
 # use gitalk://github.com/gitalk/gitalk
-gitalk: false
-#  owner: 
-#  repo: 
-#  client_id: 
-#  client_secret: 
+gitalk: 
+ owner: LOLICOL1
+ repo: lolicol1.github.io
+ client_id: 0f06d8c6e963192695db
+ client_secret: 59650bb92bb41ad1bc07668bf4fab39ffeb785d9
 
 # Valine Comment system. https://valine.js.org
 valine:
-  enable: true # 如果你想使用valine，请将值设置为 true
+  enable: false # 如果你想使用valine，请将值设置为 true
   appId: 6rE8tjYl4DBBkMisFb7lAuK2-gzGzoHsz # your leancloud appId
   appKey: J7WNtSjU1SMuEqkD0KzOVwuL # your leancloud appKey
   notify: true # Mail notify
