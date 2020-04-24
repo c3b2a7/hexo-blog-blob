@@ -84,7 +84,7 @@ var vm = new Vue({
   }
 })
 vm.lisi.age = 18; // 直接对对象属性进行修改是不会直接响应到视图中
-this.$set(this.lisi,'age',18); // 响应式
+vm.$set(this.lisi,'age',18); // 响应式
 ```
 
 10. `v-if`和`v-show`的[异同](https://cn.vuejs.org/v2/guide/conditional.html#v-if-vs-v-show)：
