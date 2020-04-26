@@ -30,7 +30,7 @@ tags: [Spring,SpringBoot,Security,CORS,Web]
         // ... 省略其他配置
     }
     // 提供一个CorsConfigurationSource
-    // 这里直接注册成Bean即可，注意方法名必须是corsConfigurationSource，后面有原因
+    // 这里直接注册成Bean即可，注意方法名必须是corsConfigurationSource，后面会解释
     // 也可以cors().configurationSource(corsConfigurationSource())指定
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
@@ -46,15 +46,15 @@ tags: [Spring,SpringBoot,Security,CORS,Web]
     }
 ```
 
-就如前面所说，只需要开启`cors`再提供一个跨域配置源即可。方法很简单，但这里有个坑需要注意一些。
+就如前面所说，只需要开启`cors`再提供一个跨域配置源即可。方法很简单，但这里有个坑需要注意一下。
 
 #### 暴露公共接口时跨域的一个坑
 
-> 如果我们还重写了`configure(WebSecurity web)`方法，使用`web.ignoring().antMatchers(ignorePaths)`去暴露一个公共接口'/pub'那么上面的跨域配置对这个接口来说就没用，也就是说这个接口会出现跨域问题。然而我们原本就是为了提供公共接口'/pub'，但现在却有跨域问题，那怎么能行！！！（一般来说这个方法是设置对静态资源忽略认证，而不是公共接口！）
+> 如果我们还重写了`configure(WebSecurity web)`方法，使用`web.ignoring().antMatchers(ignorePaths)`去暴露一个公共接口'/pub'那么上面的跨域配置对这个接口来说就没用，也就是说这个接口会出现跨域问题。然而我们原本就是为了提供公共接口'/pub'，但现在却有跨域问题，那怎么能行！！！（一般来说这个方法是对静态资源设置直接放行，而不是公共接口！）
 
 *那这到底是为什么呢？*
 
-**因为SpringSecurity配置跨域，实质上是通过`CorsFilter`过滤器来实现的**，我们`web.ignoring()`中设置后对应的接口请求就不会经过`CorsFilter`来处理，当然会有跨域问题！之所以说*这个方法是设置对静态资源忽略认证，而不是公共接口*也是这个原因，那正确的方法是什么呢？还是`configure(HttpSecurity http)`方法：
+**因为SpringSecurity配置跨域支持，是通过`CorsFilter`过滤器来实现的**，我们`web.ignoring()`中设置后对应的接口请求就不会经过`CorsFilter`来处理，这个接口当然就存在跨域问题了！之所以说*这个方法是对静态资源设置直接放行，而不是公共接口*也是这个原因，那正确的方法是什么呢？还是`configure(HttpSecurity http)`方法：
 
 ```java
     @Override
@@ -76,9 +76,9 @@ tags: [Spring,SpringBoot,Security,CORS,Web]
 现在我们来看一下`cors()`方法，点进这个方法看看，其实很简单，就是应用了一个`CorsConfigurer`配置类。如果看过`SpringSecurity`自动配置，对形如`xxxConfigurer`的类名应该不陌生。
 这个`Configurer`其实就是在"FilterChain"上添加了一个过滤器，即`CorsFilter`
 
-我们都知道`CorsFilter`的构造方法需要一个`CorsConfigurationSource`，在请求到来时，使用`CorsProcessor`根据提供的`CorsConfiguration`去对请求进行处理（在`CorsFilter`中默认是`DefaultCorsProcessor`）而`CorsConfiguration`是通过`CorsConfigurationSource#getCorsConfiguration`方法获得的，所有说怎么获得`CorsConfigurationSource`至关重要。
+我们都知道`CorsFilter`的构造方法需要一个`CorsConfigurationSource`，在请求到来时，使用`CorsProcessor`根据提供的`CorsConfiguration`去对请求进行处理（在`CorsFilter`中默认是`DefaultCorsProcessor`）而`CorsConfiguration`是通过`CorsConfigurationSource#getCorsConfiguration`方法获得的，所以说怎么获得`CorsConfigurationSource`至关重要。
 
-还记得上面在配置`CorsConfigurationSource`时，我们直接注册Bean而不是通过`configurationSource()`方法指定吗。这种方法为什么是可行的呢？来看一下`CorsConfigurer`是如何获得`CorsConfigurationSource`并构造`CorsFilter`的：
+还记得上面在配置`CorsConfigurationSource`时，我们直接注册Bean而不是通过`configurationSource()`方法指定吗？这种方法为什么是可行的呢？来看一下`CorsConfigurer`是如何获得`CorsConfigurationSource`并构造`CorsFilter`的：
 
 ```java CorsConfigurer#getCorsFilter
     private CorsFilter getCorsFilter(ApplicationContext context) {
@@ -121,7 +121,7 @@ tags: [Spring,SpringBoot,Security,CORS,Web]
     }
 ```
 
-获取`CorsConfigurationSource`并构造`CorsFilter`的步骤注释里写的很清楚了，正常来说我们配置跨域配置源是直接指定也好，还是注册成Bean也好（注意Bean的名字），都是可以被获取到的。一般情况下，我们也的确是这样做的（提供好`CorsConfigurationSource`）。但为什么最后有`MvcCorsFilter.getMvcCorsFilter(context)`这样一个调用？通过这个方法里抛出的异常信息不难猜测到是SpringSecurity为了兼容SpringMVC中配置跨域的方式。
+获取`CorsConfigurationSource`并构造`CorsFilter`的步骤注释里写的很清楚了，正常来说我们配置跨域配置源不管是直接指定也好，还是注册成Bean也好（注意Bean名字的要求），都是可以被获取到的。一般情况下，我们也的确是这样做的（直接提供一个`CorsConfigurationSource`）。但为什么最后有`MvcCorsFilter.getMvcCorsFilter(context)`这样一个调用？通过这个方法里抛出的异常信息不难猜测到是SpringSecurity为了兼容SpringMVC中配置跨域的方式。
 
 还记得不使用SpringSecurity时如何在SpringMVC中配置支持跨域吗？
 
