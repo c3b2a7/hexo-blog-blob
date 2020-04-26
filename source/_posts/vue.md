@@ -37,14 +37,15 @@ mounted(){ // 挂载后执行
 }
 ```
 
-3. v-bind指令使用动态参数（2.6.0+）
+3. `v-bind`、`v-on`、`v-slot`指令使用[动态指令参数](https://cn.vuejs.org/v2/guide/syntax.html#%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0)（2.6.0+）
 
 ```html
 <a :[attr]="value">...</a>
 <a @[event]="value">...</a>
+<template #[solt]>...</template>
 ```
 
-`attr`和`event`会作为一个javascript表达式进行求值
+`attr`、`event`和`solt`会作为一个javascript表达式进行求值
 
 4. 在DOM中使用模板时，避免使用大写字符来命名键名，因为浏览器会把attribute名全部强制转换为小写。
 
