@@ -1,5 +1,5 @@
 ---
-title: SpringSecuirty 跨域
+title: SpringSecurity 跨域
 categories: 正常的文章
 date: 2020-04-27 00:01:12
 tags: [Spring,SpringBoot,Security,CORS,Web]
@@ -10,6 +10,8 @@ tags: [Spring,SpringBoot,Security,CORS,Web]
 在SpringSecurity中配置跨域，我相信所有用过SpringSecurity的人应该都知道，因为实在是太简单了。那我为什么还要写这篇文章呢？写这篇文章的目的当然不是去解释如何配置跨域，而是通过分析Spring对跨域支持的源码来感受设计中的优雅。
 
 先声明一下开发环境：`SpringBoot：2.2.2`
+
+<!-- more -->
 
 ## 正文
 
