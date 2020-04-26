@@ -67,7 +67,7 @@ share: true
 
 # 是否开启打赏，关闭 reward: false
 reward:
-  title: 感谢投食~
+  title: 我很穷，请给我钱~
   wechat: /img/wechat.jpg     #微信，关闭设为 false
   alipay: /img/alipay.jpg     #支付宝，关闭设为 false
 
