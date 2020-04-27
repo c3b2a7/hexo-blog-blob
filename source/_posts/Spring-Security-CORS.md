@@ -37,9 +37,9 @@ tags: [Spring,SpringBoot,Security,CORS,Web]
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("*"); // 最好根据实际的需要去设置，这里演示，所以粗暴了一点
+        configuration.addAllowedOrigin("*"); // 根据实际的需要去设置
         configuration.addAllowedMethod("*"); // 同上
-        configuration.addAllowedHeader("*"); // 这里起码需要允许 Access-Control-Allow-Origin
+        configuration.addAllowedHeader("*"); 
         configuration.setMaxAge(3600L);
         configuration.setAllowCredentials(true);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -363,8 +363,8 @@ private class CorsInterceptor extends HandlerInterceptorAdapter implements CorsC
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
-		return corsProcessor.processRequest(this.config, request, response);
-	}
+        return corsProcessor.processRequest(this.config, request, response);
+    }
 
     @Override
     @Nullable

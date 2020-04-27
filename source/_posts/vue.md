@@ -31,7 +31,7 @@ vm.$watch('a', newValue => this.myMethod())
 
 ```javascript
 mounted(){ // 挂载后执行
-  EventBus.$on('eventName',data => { // 这里要用箭头函数，否则this指代EventBus
+  EventBus.$on('event-name',data => { // 这里要用箭头函数，否则this指代EventBus
 	this.data = data;
   })
 }
