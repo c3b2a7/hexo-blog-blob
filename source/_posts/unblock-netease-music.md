@@ -110,7 +110,7 @@ http://music.griouges.cn:39000/proxy.pac
 ##### Shadowrocket
 
 1. 👉[安装软件](https://apps.apple.com/us/app/shadowrocket/id932747118)
-2. 👉[点击导入节点](shadowrocket://add/sub://aHR0cHM6Ly9sb2xpY28ubWUvc3Vic2NyaWJlL1NoYWRvd3JvY2tldC9zZXJ2ZXIudHh0#%F0%9F%8E%B8%E8%A7%A3%E9%94%81%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90)
+2. 👉[点击导入节点](shadowrocket://add/sub://aHR0cHM6Ly9sb2xpY28ubWUvc3Vic2NyaWJlL1NoYWRvd3JvY2tldC9zZXJ2ZXIudHh0#%F0%9F%8E%B8%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90)
 3. 👉[点击导入配置](shadowrocket://config/add/https://lolico.me/subscribe/Shadowrocket/rules.conf)
 4. 😘Enjoy it！
 
@@ -128,13 +128,13 @@ http://music.griouges.cn:39000/proxy.pac
     3. 👉在相应位置添加以下配置：
     ```
     [policy]
-    static=🎸解锁网易云音乐, direct, 🎵 解锁节点1, 🎵 解锁节点2, 🎵 解锁节点3, 🎵 解锁节点4, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
+    static=🎸网易云音乐, direct, 🎵 解锁节点1, 🎵 解锁节点2, 🎵 解锁节点3, 🎵 解锁节点4, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
 
     [server_remote]
     https://lolico.me/subscribe/QuantumultX/NeteaseMusicServer.txt, tag=Netease Music, enabled=true, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
 
     [filter_remote]
-    https://lolico.me/subscribe/QuantumultX/NeteaseMusicFilter.txt, tag=🎸解锁网易云音乐, force-policy=🎸解锁网易云音乐, enabled=true
+    https://lolico.me/subscribe/QuantumultX/NeteaseMusicFilter.txt, tag=🎸网易云音乐, force-policy=🎸网易云音乐, enabled=true
     ```
     4. 😘Enjoy it！
 
