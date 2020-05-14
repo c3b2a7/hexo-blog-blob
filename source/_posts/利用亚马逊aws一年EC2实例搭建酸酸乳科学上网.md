@@ -51,19 +51,16 @@ tags: ？？？
 ## 搭建ss/ssr
 1. 输入```sudo su```获取root权限
 2. 安装脚本
-```bash
-$ yum -y install wget
-$ wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && sudo bash ssr.sh
-```
-备用地址1:
-```bash
-$ yum -y install wget
-$ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && sudo bash ssr.sh
-```
-备用地址2：
-```bash
-$ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssrmu.sh && chmod +x ssrmu.sh && bash ssrmu.sh
-```
+
+    - ss
+    ```bash
+        wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ss-go.sh && chmod +x ss-go.sh && sudo bash ss-go.sh
+    ```
+    - ssr
+    ```bash
+    wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && sudo bash ssr.sh
+    ```
+
 安装完成后是这样的
 ![安装完成](https://i.loli.net/2020/03/09/MquXNHZ3vcwjAsV.png)
 3. 安装完成之后输入1回车，进行安装配置ShadowsocksR
@@ -83,10 +80,12 @@ $ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/d
 ![安装成功](https://i.loli.net/2020/03/09/gHDKkfMOTW7cyQt.png)
 安装成功后就可以复制配置信息中的ss/ssr链接或二维码进行连接开始我们的FQ之旅
 
-## 补充：配合谷歌BBR加速SSR
-*需要在root下配置
-输入```bash ssr.sh```调出脚本
-![调出脚本](https://i.loli.net/2020/03/09/5PUBk2Og84Ryl1I.png)
-具体方法为：输入14（其他功能）→输入1（配置BBR)→输入1（安装BBR）→等待安装
+## 补充：BBR加速SS/SSR
 
-*不同内核可能会安装错误或是不能安装，大家可以试着选择其他功能中的锐速或是LotServer进行加速
+1. ssr.sh脚本内置bbr加速
+
+2. 四合一脚本
+
+    ```bash
+    wget -N --no-check-certificate https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh && chmod +x tcp.sh && sudo bash tcp.sh
+    ```
