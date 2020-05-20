@@ -15,7 +15,7 @@ tags: ？？？
 
 代理端已做限制：*仅允许代理网易云相关域名和ip的请求，其他请求一律拒绝。*由于服务器带宽只有5Mbps，所以理论速度不会超过640kb/s。如果使用的人比较多，可能出现加载比较慢的现象。建议网易云音乐内**开启边听边存**，常听的歌**下载到本地**。最后，你也可以通过文末的打赏按钮对我进行打赏鼓励~（大雾
 
-> *注意：互联网并非法外之地，此代理仅用作学习和交流。*
+> *注意：*互联网并非法外之地，此代理完全免费并仅用作学习与交流，一切收费倒卖行为请及时举报并反馈。
 
 ## 使用方法
 
@@ -69,7 +69,7 @@ http://music.griouges.cn:39000/proxy.pac
 
 #### Clash for Windows
 
-1. 👉[安装软件](https://lolico.griouges.cn/download/clash/Clash.for.Windows.Setup.0.9.9.exe)
+1. 👉[安装软件](https://lolico.griouges.cn/download/clash/Clash.for.Windows.Setup.0.9.11.exe)
 2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
 3. 👉进入「General」，开启「System Proxy」
 4. 👉进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
@@ -94,12 +94,12 @@ http://music.griouges.cn:39000/proxy.pac
 鉴于安卓端`导入节点配置文件`可能无法调用Clash应用自动导入的问题，提供*手动导入*方法：
 
 1. 👉进入Clash应用，依次点击「配置」->「新配置」->「从URL导入」
-2. 👉填写名称：`lolico.me`，填写URL地址：`https://lolico.me/subscribe/Clash/config.yaml`
+2. 👉填写名称：`lolico.me`，填写URL地址：`https://lolico.me/subscribe/Clash/config.yaml`，自动更新：1440
 3. 👉保存后选中此配置
 4. 👉回到主界面启动代理
 5. 😘Enjoy it！
 
-*^ Clash配置中有多个节点，当某个节点不可用时，自行切换至其他节点（怎么切换节点我就不多说了，自己琢磨下Clash的使用）*
+> Clash配置中有多个节点，当某个节点不可用时，自行切换至其他节点或更新配置，怎么切换节点我就不多说了，请自己琢磨下如何使用Clash。
 
 #### ios
 

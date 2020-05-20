@@ -1,7 +1,9 @@
-#---------------------------------------------------#
-## 更新：2020-05-04
+#---------------------------------------------------------#
+## 更新：2020-05-20
 ## 链接：https://lolico.me/subscribe/Clash/config.yaml
-#---------------------------------------------------#
+## 链接：https://lolico.me/2020/03/23/unblock-netease-music/
+## 注意：此代理完全免费，如遇收费请前往上面的链接反馈并举报卖家
+#---------------------------------------------------------#
 
 port: 7890
 socks-port: 7891
@@ -16,8 +18,9 @@ dns:
   nameserver:
     - 119.29.29.29
     - 223.5.5.5
+    - 114.114.114.114
 
-Proxy:
+proxies:
   - name: 🇺🇸 美国
     type: ss
     server: 54.91.7.156
@@ -52,7 +55,7 @@ Proxy:
     password: ""
     tls: false
 
-Proxy Group:
+proxy-groups:
   - name: 🎸 网易音乐
     type: select
     proxies:
@@ -66,9 +69,12 @@ Proxy Group:
     proxies:
       - DIRECT
       - 🇺🇸 美国
+  - name: 🚩公益代理，收费请举报
+    type: select
+    proxies:
+      - DIRECT
 
-Rule:
-  # Netease Music
+rules:
   - DOMAIN,music.163.com,🎸 网易音乐
   - DOMAIN,api.iplay.163.com,🎸 网易音乐
   - DOMAIN,apm.music.163.com,🎸 网易音乐
@@ -95,7 +101,6 @@ Rule:
   - IP-CIDR,223.252.199.66/32,🎸 网易音乐,no-resolve
   - IP-CIDR,223.252.199.67/32,🎸 网易音乐,no-resolve
 
-  # Netease Music Advertising
   - DOMAIN,admusicpic.music.126.net,REJECT
   - DOMAIN,iadmat.nosdn.127.net,REJECT
   - DOMAIN,iadmusicmat.music.126.net,REJECT
