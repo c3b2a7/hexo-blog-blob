@@ -43,7 +43,7 @@ http://music.griouges.cn:39000/proxy.pac
 http://music.griouges.cn:39000/proxy.pac
 ```
 
-#### android
+#### Android
 
 进入「设置」>「WLAN」>「修改网络」>「高级选项」>「代理」>「代理自动配置」（不同机型设置的地方不一样，也可能在wifi右边的感叹号中），填写以下地址：
 
@@ -51,7 +51,7 @@ http://music.griouges.cn:39000/proxy.pac
 http://music.griouges.cn:39000/proxy.pac
 ```
 
-#### ios
+#### iOS
 
 首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。
 
@@ -99,13 +99,13 @@ http://music.griouges.cn:39000/proxy.pac
 4. 👉回到主界面启动代理
 5. 😘Enjoy it！
 
-> Clash配置中有多个节点，当某个节点不可用时，自行切换至其他节点或更新配置，怎么切换节点我就不多说了，请自己琢磨下如何使用Clash。
+> Clash配置中有多个节点，当某个节点不可用时，自行切换至其他节点或更新配置，怎么切换节点就不多说了，请自己琢磨下Clash如何使用。
 
-#### ios
+#### iOS
 
 首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。
 
-> ios端提供`Shadowrocket`和`QuantumultX`软件的订阅，至于其他客户端，能力者自行根据配置文件修改。
+> iOS端提供`Shadowrocket`和`QuantumultX`软件的订阅，至于其他客户端，能力者自行根据配置文件修改。
 
 ##### Shadowrocket
 
@@ -142,11 +142,11 @@ http://music.griouges.cn:39000/proxy.pac
 
 > 部分解锁节点来自telegram频道，如有侵权，请联系删除，谢谢！
 
-> *注意：*如果测试节点真实延迟显示`timeout/超时`是正常的，服务端仅通过网易云相关域名和ip的请求。
+> *注意：*如果测试节点真实延迟显示`timeout/超时`是正常的，服务端开启严格模式仅能通过网易云相关域名或ip的请求。
 
 ## FAQ
 
-1. 为什么开启后，听数字专辑中的歌还是提示要购买？
+1. 为什么开启后，听数字专辑中的歌会提示购买？
 
     直接搜出来的数字专辑中的歌曲是不能直接听的，需要到专辑中听。
 
@@ -154,15 +154,15 @@ http://music.griouges.cn:39000/proxy.pac
 
     无法缓冲的问题一般是由于网络造成的，请换个网络或者更换节点；找不到资源，请尝试使用其他节点解锁，某些节点搜索资源时使用的平台不同，有的找不到，是正常的。
 
-3. 为什么代理设置并且开启后，登录网易云音乐时提示网络异常？
+3. 为什么开启代理后，登录网易云音乐时提示网络异常？
 
     先关闭代理再进行登录，进入后再开启代理。
 
-4. 为什么点击导入节点配置文件没反应啊？
+4. 为什么点击导入节点配置文件没反应？
 
     首先确保已下载代理软件，再尝试，安卓可能出现下载了软件还是无法导入的情况，请手动导入，见1.2.3节Clash for Android
 
-5. 为什么安卓系统代理没找到输入地址的地方？
+5. 为什么安卓系统代理找不到输入地址的地方？
 
     不同机型设置代理的地方不一样，可能在高级设置中也可能在wifi右边的感叹号中，确保代理方式选择自动代理。
 
