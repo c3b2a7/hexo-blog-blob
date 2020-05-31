@@ -26,7 +26,7 @@ menu:
     target: _blank
   twitter:
     text: Twitter
-    url: https://twitter.com/Griouges
+    url: https://twitter.com/_lovebirdy
     target: _blank
   info-circle:
     text: About
@@ -42,7 +42,7 @@ brand: /img/brand.jpg
 favicon: /favicon.ico
 
 # email
-email: 534619360@qq.com
+email: lolicol1@qq.com
 
 # 设置 Android L Chrome 浏览器状态栏颜色
 color: '#3F51B5'
@@ -67,7 +67,7 @@ share: true
 
 # 是否开启打赏，关闭 reward: false
 reward:
-  title: 我很穷，请给我钱~
+  title: 感谢投食~
   wechat: /img/wechat.jpg     #微信，关闭设为 false
   alipay: /img/alipay.jpg     #支付宝，关闭设为 false
 
@@ -84,7 +84,7 @@ toc:
 
 # 文章页留言内容，hexo中所有变量及辅助函数等均可调用，具体请查阅 hexo.io
 #postMessage: 本文章的地址：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>
-postMessage: ''
+postMessage: 转载注明出处：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" rel="external"><%- decodeURI(page.permalink.replace(/index\.html$/, '')) %></a>
 
 # 站长统计，如要开启，输入CNZZ站点id，如 cnzz: 1255152447
 cnzz: false

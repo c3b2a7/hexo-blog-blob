@@ -116,7 +116,7 @@ http://music.griouges.cn:39000/proxy.pac
 
 ##### QuantumultX
 
-- 方式一（导入全局配置文件）【推荐】
+- 方式一（导入全局配置文件）
     1. 👉[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
     2. 👉进入应用 -> 点击右下角 -> 滑至底部 -> 下载
     3. 👉填入地址：`https://lolico.me/subscribe/QuantumultX/pro.conf`
@@ -138,7 +138,7 @@ http://music.griouges.cn:39000/proxy.pac
     ```
     4. 😘Enjoy it！
 
-建议选择方式一*导入全局配置文件*，其中还包含了**去广告**的配置（默认启用），和一个**解锁b站大会员**的可选配置（*默认禁用，直接开启无效*）
+方式一*导入全局配置文件*，其中包含了**去广告**的配置（默认启用），和一个**解锁b站大会员**的可选配置（*默认禁用，直接开启无效*）
 
 > 部分解锁节点来自telegram频道，如有侵权，请联系删除，谢谢！
 
