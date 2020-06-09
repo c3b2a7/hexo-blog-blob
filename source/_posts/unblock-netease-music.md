@@ -9,7 +9,7 @@ tags: ？？？
 
 ## 前言
 
-通过配置下文中的代理，实现解锁网易云无版权音乐以及部分试听音乐。
+通过配置下文中的代理，实现解锁网易云无版权音乐以及试听音乐，文中使用到的项目：[UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic)。
 
 使用前你需要知道：
 
@@ -53,7 +53,7 @@ http://music.griouges.cn:39000/proxy.pac
 
 #### iOS
 
-首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。
+首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。（[详见官方教程](https://support.apple.com/zh-cn/HT204477)）
 
 其次在「设置」>「无线局域网」>「当前连接网络」>「HTTP 代理」>「配置代理」>「自动」，填写以下地址：
 
@@ -91,10 +91,10 @@ http://music.griouges.cn:39000/proxy.pac
 
 **注意：**
 
-鉴于安卓端`导入节点配置文件`可能无法调用Clash应用自动导入的问题，提供*手动导入*方法：
+鉴于安卓端`导入节点配置文件`可能无法调起Clash进行自动导入，请手动导入配置：
 
 1. 👉进入Clash应用，依次点击「配置」->「新配置」->「从URL导入」
-2. 👉填写名称：`lolico.me`，填写URL地址：`https://lolico.me/subscribe/Clash/config.yaml`，自动更新：1440
+2. 👉填写名称：`lolico.me`，URL地址：`https://lolico.me/subscribe/Clash/config.yaml`，自动更新：1440
 3. 👉保存后选中此配置
 4. 👉回到主界面启动代理
 5. 😘Enjoy it！
@@ -103,7 +103,7 @@ http://music.griouges.cn:39000/proxy.pac
 
 #### iOS
 
-首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。
+首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。（[详见官方教程](https://support.apple.com/zh-cn/HT204477)）
 
 > iOS端提供`Shadowrocket`和`QuantumultX`软件的订阅，至于其他客户端，能力者自行根据配置文件修改。
 
@@ -138,38 +138,32 @@ http://music.griouges.cn:39000/proxy.pac
     ```
     4. 😘Enjoy it！
 
-方式一*导入全局配置文件*，其中包含了**去广告**的配置（默认启用），和一个**解锁b站大会员**的可选配置（*默认禁用，直接开启无效*）
-
 > 部分解锁节点来自telegram频道，如有侵权，请联系删除，谢谢！
 
-> *注意：*如果测试节点真实延迟显示`timeout/超时`是正常的，服务端开启严格模式仅能通过网易云相关域名或ip的请求。
+> *注意：*如果测试节点真实延迟显示`timeout/超时`是正常的，服务端开启严格模式后仅能通过网易云相关域名或ip的请求。
 
 ## FAQ
 
-1. 为什么开启后，听数字专辑中的歌会提示购买？
+1. 为什么开启代理后，听数字专辑中的音乐会提示购买？
 
-    直接搜出来的数字专辑中的歌曲是不能直接听的，需要到专辑中听。
+    直接搜数字专辑中的音乐在播放时可能出现这种现象，尝试从专辑中进入并播放。
 
-2. 为什么会提示无法缓冲或者找不到资源？
-
-    无法缓冲的问题一般是由于网络造成的，请换个网络或者更换节点；找不到资源，请尝试使用其他节点解锁，某些节点搜索资源时使用的平台不同，有的找不到，是正常的。
-
-3. 为什么开启代理后，登录网易云音乐时提示网络异常？
+2. 为什么开启代理后，登录网易云音乐提示网络异常？
 
     先关闭代理再进行登录，进入后再开启代理。
 
-4. 为什么点击导入节点配置文件没反应？
+3. 为什么播放音乐提示网络不给力或者歌曲不存在？
 
-    首先确保已下载代理软件，再尝试，安卓可能出现下载了软件还是无法导入的情况，请手动导入，见1.2.3节Clash for Android
+    iOS端出现网络不给力时，请确保CA证书已信任；歌曲不存在，请尝试使用其他节点解锁，不同节点在搜索音源时使用的平台不同，部分歌曲找不到是正常的现象。
 
-5. 为什么安卓系统代理找不到输入地址的地方？
+4. 为什么播放的音乐是live版或者完全不同的一首音乐？
 
-    不同机型设置代理的地方不一样，可能在高级设置中也可能在wifi右边的感叹号中，确保代理方式选择自动代理。
+    由于解锁服务是从其他平台搜索音源，并且选择策略不可能做到十全十美，在音乐重名并且火热程度不同的情况下，可能会出现这种现象，目前没有较好的解决方法。
 
-6. 为什么打开代理后某些网站或应用加载不出资源？
+5. 为什么开启代理后某些网站或应用加载资源很慢甚至失败？
 
-    规则代理是根据请求的特征来进行匹配，看是否需要代理，所以说相比不开代理理论上是会有延迟（但基本忽略不计），并且上面给出的配置十分精简，如果感觉到有明显的网络延迟并且能确定不是因为自己网络较差所造成，请在*必要时*再开启代理，日常上网关闭即可。
+    由于使用代理并且根据请求分流，所以说相比不开代理理论上的确会有延迟（基本忽略不计）。如果感觉有明显的网络延迟并且确定不是由于自己网络环境较差所致，请在*必要时*再开启代理，日常上网关闭即可。
 
-7. 这写的都是些啥玩意啊？
+6. 这写的都是些啥玩意？
 
     ......
