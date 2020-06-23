@@ -69,7 +69,7 @@ http://music.griouges.cn:39000/proxy.pac
 
 #### Clash for Windows
 
-1. 👉[安装软件](https://lolico.griouges.cn/download/clash/Clash.for.Windows.Setup.0.10.1.exe)
+1. 👉[安装软件](https://lolico.griouges.cn/download/clash/Clash.for.Windows.Setup.0.10.3.exe)
 2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
 3. 👉进入「General」，开启「System Proxy」
 4. 👉进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
@@ -91,7 +91,7 @@ http://music.griouges.cn:39000/proxy.pac
 
 **注意：**
 
-鉴于安卓端`导入节点配置文件`可能无法调起Clash进行自动导入，请手动导入配置：
+~~鉴于安卓端`导入节点配置文件`无法调起Clash进行自动导入，请手动导入配置：~~（最新版已支持，上方直接下载）
 
 1. 👉进入Clash应用，依次点击「配置」->「新配置」->「从URL导入」
 2. 👉填写名称：`lolico.me`，URL地址：`https://lolico.me/subscribe/Clash/config.yaml`，自动更新：1440
