@@ -191,13 +191,13 @@ Consumer.from("group name", "consumer name")
 
 要搞清楚`ReadOffset`，我们首先要知道Stream中偏移量的含义，在Stream中偏移量既可以表示消费记录时的偏移量，又可以表示消费者组在Stream上的偏移量。还记得Redis中我们怎么读取Stream中的记录吗？
 
-通过`xread`命令也就是非消费者组模式直接读取，或者使用`xreadgroup`命令在消费者组中命令一个消费者去消费一条记录，这个时候，我们可以通过`0`、`$`、`>`分别表示第一条记录、最新一条记录和最后一次未被消费的记录，这也就是`ReadOffset`的用途之一：**用于表示直接读取或消费者组中消费者读取记录时的偏移量**。
+通过`xread`命令也就是非消费者组模式直接读取，或者使用`xreadgroup`命令在消费者组中命令一个消费者去消费一条记录，这个时候，我们可以通过`0`、`>`、`$`分别表示第一条记录、最后一次未被消费的记录和最新一条记录，这也就是`ReadOffset`的用途之一：**用于表示直接读取或消费者组中消费者读取记录时的偏移量**。
 
 那么还有另外的用途吗？
 
 当然了，还记得怎样创建消费者组吗？一般我们使用`xgroup create`命令创建一个消费者组时可以选择从Stream的第一条消息开始，或者Stream的中间某个记录开始，又或者从Stream的最新一条记录开始。也就分别代表了`0`、`$`。这也就是`ReadOffset`的用途之二：**用于表示创建消费者组时该消费者组在Stream上的偏移量**。
 
-理解`ReadOffset`最快最简单的方法就是在Redis-cli中用Redis命令操作一番。这其中还有一些值得注意的问题，比如创建消费者组时不能使用`>`表示最后一次未被消费的记录；比如`0`表示从第一条开始并且包括第一条；`$`表示从最新一条开始但并不是指当前Stream的最后一条记录，所以使用`$`时最新一条也就是表示下一个`xadd`添加的那一条记录，所以说`$`在阻塞读取模式下才有意义！
+理解`ReadOffset`最快最简单的方法就是在Redis-cli中用Redis命令操作一番。这其中还有一些值得注意的问题，比如创建消费者组时不能使用`>`表示最后一次未被消费的记录；比如`0`表示从第一条开始并且包括第一条；`$`表示从最新一条开始但并不是指当前Stream的最后一条记录，所以使用`$`时最新一条也就是表示下一个`xadd`添加的那一条记录，所以说`$`在非消费者组模式的阻塞读取下才有意义！
 
 ### 实现StreamListener
 
@@ -390,7 +390,7 @@ public RecordId add(Record<K, ?> record) {
 }
 ```
 
-通过上面这个方法我们可以发现stream序列化时和其他类型不一样，我们在使用json序列化一个对象时都是直接进行的，而这里先将其转换后再使用json进行序列化（如果使用json序列化器的话），那么`ObjectRecord`是怎么转换成`MapRecord`的呢？可以看到是通过`ObjectRecord#toMapRecord`方法完成的，这个方法需要一个`HashMapper`用于将对象的属性/属性值映射成Map类型，你会发现`opsForStream`方法重载了一个默认无参的方法，而这个方法默认使用的是`ObjectHashMapper`，在我们构造`StreamMessageListenerContainerOptionsBuilder`时调用`targetType`时默认使用的也是`ObjectHashMapper`。而这个`ObjectHashMapper`会将对象中的属性和属性值转换成`byte[]`形式，所以在第一步之后这个`MapRecord`中的值的类型已经是`byte[]`了，那么也就导致第二步转换为`ByteRecord`时出现这种情况：`objectMapper.writeValueAsBytes(byte[])`，这是一个测试实例：
+通过上面这个方法我们可以发现stream序列化时和其他类型不一样，我们在使用json序列化一个对象时都是直接进行的，而这里分了两步并且序列化器是用于第二部转换，那么`ObjectRecord`是怎么转换成`MapRecord`的呢？点进`StreamObjectMapper.toMapRecord`方法可以看到其实是通过`ObjectRecord#toMapRecord`方法完成的，这个方法需要一个`HashMapper`用于将对象的属性/属性值映射构造成Map类型，你会发现`opsForStream`方法重载了一个默认无参的方法，而这个方法默认使用的是`ObjectHashMapper`，在我们构造`StreamMessageListenerContainerOptionsBuilder`时调用`targetType`时默认使用的也是`ObjectHashMapper`。而这个`ObjectHashMapper`会将对象中的属性和属性值转换成`byte[]`形式，所以在第一步之后这个`MapRecord`中的值的类型已经是`byte[]`了，那么也就导致第二步在使用json序列化器转换为`ByteRecord`时出现这种情况：`objectMapper.writeValueAsBytes(byte[])`，这是一个测试实例：
 
 ```java
 @Test
@@ -421,11 +421,11 @@ void test() {
 
 ![](https://lolico.griouges.cn/images/20200628204930.png)
 
-测试结束终端抛出上面提到的异常。这个问题解决办法就是使用`String`序列化器也就是使用`StringRedisTemplate`，使用这个序列化器在序列化时如果是已经是`byte[]`，那么就会直接返回原`byte[]`；
+测试结束终端抛出上面提到的异常。这个问题解决办法就是使用`String`序列化器也就是使用`StringRedisTemplate`，因为这个序列化器不能序列化`byte[]`类型的对象，使用这个序列化器在序列化时如果已经是`byte[]`，那么就会直接返回原`byte[]`：
 
 ![](https://lolico.griouges.cn/images/20200628210421.png)
 
-更具体的可以跟着`add`方法debug一遍。
+更具体的细节可以跟着`add`方法debug一遍。
 
 ### ReadOffset使用错误导致group中消费者消费失败
 
