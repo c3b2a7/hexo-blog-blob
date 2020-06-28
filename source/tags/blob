@@ -27,3 +27,5 @@ Asp.Net Core
 NLog
 .Net Core 3
 WPF
+Redis
+MQ
