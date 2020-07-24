@@ -11,26 +11,26 @@ tags: ？？？
 
 通过配置下文中的代理，实现解锁网易云无版权音乐以及试听音乐，文中使用到的项目：[UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic)。
 
+> 注意：互联网并非法外之地，此代理完全免费并仅用作学习与交流，使用过程中出现任何问题本人概不负责。如发现任何收费倒卖等行为请及时举报并反馈。
+
+## 食用方法
+
 使用前你需要知道：
 
-代理端已做限制：*仅允许代理网易云相关域名和ip的请求，其他请求一律拒绝。*由于服务器带宽只有5Mbps，所以理论速度不会超过640kb/s。如果使用的人比较多，可能出现加载比较慢的现象。建议网易云音乐内**开启边听边存**，常听的歌**下载到本地**。最后，你也可以通过文末的打赏按钮对我进行打赏鼓励~（大雾
+服务端已做限制：*仅允许代理网易云相关域名和ip的请求，其他请求一律拒绝。*由于服务器带宽只有5Mbps，所以理论速度不会超过640kb/s。如果使用的人比较多，可能出现加载比较慢的现象。建议网易云音乐内**开启边听边存**，常听的歌**下载到本地**。最后，你也可以通过文末的打赏按钮对我进行打赏鼓励~（大雾
 
-> *注意：*互联网并非法外之地，此代理完全免费并仅用作学习与交流，一切收费倒卖行为请及时举报并反馈。
-
-## 使用方法
-
-现提供两种方法，不想折腾的推荐`方式一`，但是只能用于wifi连接，流量不可用，否则选择`方式二`（本人更推荐方式二）
+现提供两种方法，不想折腾的使用`方法一`（局限性较大），否则请选择`方法二`（推荐）。
 
 ### 方法一：系统代理PAC
 
-使用系统代理PAC解锁是最简单的方法，缺点是 android 和 ios 只能在连接WiFi的环境下使用。下面介绍不同平台系统代理设置方法（连接二选一即可）
+使用系统代理PAC解锁是最简单的方法，缺点是 Android 和 iOS 只能在连接WiFi的环境下使用。下面介绍不同平台系统代理PAC的设置方法，对号入座。
 
 #### Windows
 
 以 Windows 10 为例，进入「Windows 设置」>「网络和 Internet」>「代理」>「自动设置代理」>「使用设置脚本」，填写以下地址：
 
 ```txt
-http://music.griouges.cn:39000/proxy.pac
+http://music.lolico.me:39000/proxy.pac
 ```
 
 进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
@@ -40,7 +40,7 @@ http://music.griouges.cn:39000/proxy.pac
 进入「系统偏好设置」>「网络」>「高级」>「代理」，填写以下地址：
 
 ```txt
-http://music.griouges.cn:39000/proxy.pac
+http://music.lolico.me:39000/proxy.pac
 ```
 
 #### Android
@@ -48,29 +48,25 @@ http://music.griouges.cn:39000/proxy.pac
 进入「设置」>「WLAN」>「修改网络」>「高级选项」>「代理」>「代理自动配置」（不同机型设置的地方不一样，也可能在wifi右边的感叹号中），填写以下地址：
 
 ```txt
-http://music.griouges.cn:39000/proxy.pac
+http://music.lolico.me:39000/proxy.pac
 ```
 
 #### iOS
 
-首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。（[详见官方教程](https://support.apple.com/zh-cn/HT204477)）
-
-其次在「设置」>「无线局域网」>「当前连接网络」>「HTTP 代理」>「配置代理」>「自动」，填写以下地址：
+首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)（打不开的请挂代理），前往“设置-通用-描述文件”，安装「UnblockNeteaseMusic Root CA」，然后在“设置-通用-关于本机-证书信任设置”处开启对「UnblockNeteaseMusic Root CA」的信任，最后给当前连接的wifi配置http代理，选择自动并填入以下地址：
 
 ```txt
-http://music.griouges.cn:39000/proxy.pac
+http://music.lolico.me:39000/proxy.pac
 ```
 
 ### 方法二：代理软件
 
-使用代理软件，不管是无线网还是流量都是可用的。
-
-> 下面放上不同平台的主流代理软件的使用步骤，请对号入座。
+使用代理软件，任何网络环境都可用，下面放上不同平台主流代理软件的使用步骤，至于文中没有提到的客户端，能力者自行根据提供的现有配置修改。
 
 #### Clash for Windows
 
 1. 👉[安装软件](https://lolico.griouges.cn/download/clash/Clash.for.Windows.Setup.0.10.3.exe)
-2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
+2. 👉[导入配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
 3. 👉进入「General」，开启「System Proxy」
 4. 👉进入网易云音乐「设置」>「工具」>「Http代理」，选择「使用 IE 代理设置」。
 5. 😘Enjoy it！
@@ -78,69 +74,54 @@ http://music.griouges.cn:39000/proxy.pac
 #### Clash for MacOS
 
 1. 👉[安装软件](https://lolico.griouges.cn/download/clash/ClashX.dmg)
-2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
+2. 👉[导入配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
 3. 😘Enjoy it！
 
 #### Clash for Android
 
 1. 👉[安装软件](https://lolico.griouges.cn/download/clash/app-armeabi-v7a-release.apk)
-2. 👉[点击导入节点配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
+2. 👉[导入配置文件](clash://install-config?url=https%3a%2f%2flolico.me%2fsubscribe%2fClash%2fconfig.yaml)
 3. 👉保存后应用此配置
 4. 👉回到主界面启动代理
 5. 😘Enjoy it！
 
 **注意：**
 
-~~鉴于安卓端`导入节点配置文件`无法调起Clash进行自动导入，请手动导入配置：~~（最新版已支持，上方直接下载）
+~~鉴于安卓端`导入配置文件`无法调起Clash进行自动导入，请手动导入配置：~~（最新版已支持，上方直接下载）
 
-1. 👉进入Clash应用，依次点击「配置」->「新配置」->「从URL导入」
-2. 👉填写名称：`lolico.me`，URL地址：`https://lolico.me/subscribe/Clash/config.yaml`，自动更新：1440
+1. 👉进入Clash应用，依次点击「配置」>「新配置」>「从URL导入」
+2. 👉填写名称：lolico.me，URL地址：https://lolico.me/subscribe/Clash/config.yaml ，自动更新：1440
 3. 👉保存后选中此配置
 4. 👉回到主界面启动代理
 5. 😘Enjoy it！
 
-> Clash配置中有多个节点，当某个节点不可用时，自行切换至其他节点或更新配置，怎么切换节点就不多说了，请自己琢磨下Clash如何使用。
+> Clash配置中有多个节点，当节点不可用时，请切换至其他节点或尝试更新配置文件。
 
 #### iOS
 
-首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。（[详见官方教程](https://support.apple.com/zh-cn/HT204477)）
-
-> iOS端提供`Shadowrocket`和`QuantumultX`软件的订阅，至于其他客户端，能力者自行根据配置文件修改。
+首先下载[CA证书](https://raw.githubusercontent.com/nondanee/UnblockNeteaseMusic/master/ca.crt)（打不开的请挂代理），前往“设置-通用-描述文件”，安装「UnblockNeteaseMusic Root CA」，然后在“设置-通用-关于本机-证书信任设置”处开启对「UnblockNeteaseMusic Root CA」的信任。
 
 ##### Shadowrocket
 
 1. 👉[安装软件](https://apps.apple.com/us/app/shadowrocket/id932747118)
-2. 👉[点击导入节点](shadowrocket://add/sub://aHR0cHM6Ly9sb2xpY28ubWUvc3Vic2NyaWJlL1NoYWRvd3JvY2tldC9zZXJ2ZXIudHh0#%F0%9F%8E%B8%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90)
-3. 👉[点击导入配置](shadowrocket://config/add/https://lolico.me/subscribe/Shadowrocket/rules.conf)
+2. 👉[导入节点](shadowrocket://add/sub://aHR0cHM6Ly9sb2xpY28ubWUvc3Vic2NyaWJlL1NoYWRvd3JvY2tldC9zZXJ2ZXIudHh0#%F0%9F%8E%B8%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90)
+3. 👉[导入配置](shadowrocket://config/add/https://lolico.me/subscribe/Shadowrocket/rules.conf)
 4. 😘Enjoy it！
 
 ##### QuantumultX
 
-- 方式一（导入全局配置文件）
-    1. 👉[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
-    2. 👉进入应用 -> 点击右下角 -> 滑至底部 -> 下载
-    3. 👉填入地址：`https://lolico.me/subscribe/QuantumultX/pro.conf`
-    4. 😘Enjoy it！
+1. 👉[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
+2. 👉[导入配置](quantumult-x:///update-configuration?remote-resource=%7B%0A%20%20%20%20%22server_remote%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22https%3A%2F%2Flolico.me%2Fsubscribe%2FQuantumultX%2FNeteaseMusicServer.txt%2C%20tag%3DNetease%20Music%2C%20img-url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2FKoolson%2FQure%2Fmaster%2FIconSet%2FNetease_Music_Unlock.png%22%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22filter_remote%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22https%3A%2F%2Flolico.me%2Fsubscribe%2FQuantumultX%2FNeteaseMusicFilter.txt%2C%20tag%3D%F0%9F%8E%B8%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%2C%20force-policy%3D%F0%9F%8E%B8%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%2C%20enabled%3Dtrue%22%0A%20%20%20%20%5D%0A%7D)
+3. 👉进入应用，长按`🎸网易云音乐`策略组并添加解锁节点
+4. 😘Enjoy it！
 
-- 方式二（自行修改配置文件）
-    1. 👉[安装软件](https://apps.apple.com/us/app-bundle/quantumult-x-upgrade/id1482985563)
-    2. 👉进入应用 -> 点击右下角 -> 滑至底部 -> 编辑
-    3. 👉在相应位置添加以下配置：
-    ```
-    [policy]
-    static=🎸网易云音乐, direct, 🎵 解锁节点1, 🎵 解锁节点2, 🎵 解锁节点3, 🎵 解锁节点4, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
+这里另外再提供一个包含：策略组、常用分流、脚本订阅的精简全局配置文件（适用于QuantumultX v1.0.10及以上版本）：https://lolico.me/subscribe/QuantumultX/simple.conf
 
-    [server_remote]
-    https://lolico.me/subscribe/QuantumultX/NeteaseMusicServer.txt, tag=Netease Music, enabled=true, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Netease_Music_Unlock.png
-
-    [filter_remote]
-    https://lolico.me/subscribe/QuantumultX/NeteaseMusicFilter.txt, tag=🎸网易云音乐, force-policy=🎸网易云音乐, enabled=true
-    ```
-    4. 😘Enjoy it！
+> 注意：如果测试节点连接延迟显示`timeout/超时`是正常的，服务端开启严格模式后仅能通过网易云相关域名或ip的请求。
 
 > 部分解锁节点来自telegram频道，如有侵权，请联系删除，谢谢！
 
-> *注意：*如果测试节点真实延迟显示`timeout/超时`是正常的，服务端开启严格模式后仅能通过网易云相关域名或ip的请求。
+---
 
 ## FAQ
 
