@@ -297,7 +297,7 @@ public class StreamConsumerRunner implements ApplicationRunner, DisposableBean {
             }
         } catch (Exception exception) {
             RecordId initialRecord = ops.add(ObjectRecord.create(channel, "Initial Record"));
-            Assert.notNull(initialRecord, "Cannot initial stream with key '" + channel + "'");
+            Assert.notNull(initialRecord, "Cannot initialize stream with key '" + channel + "'");
             status = ops.createGroup(channel, ReadOffset.from(initialRecord), group);
         } finally {
             Assert.isTrue("OK".equals(status), "Cannot create group with name '" + group + "'");
@@ -345,6 +345,7 @@ public ResponseEntity<RecordId> sendMail(String receiver, String description) {
     ObjectRecord<String, MailInfo> record = Record.of(mailInfo).withStreamKey(channel);
     RecordId recordId = redisTemplate.opsForStream().add(record);
     return ResponseEntity.ok(recordId);
+}
 ```
 
 访问进行测试：
@@ -396,7 +397,7 @@ public RecordId add(Record<K, ?> record) {
 
 ```java
 @Test
-void test9() throws JsonProcessingException {
+void test() throws JsonProcessingException {
     ObjectMapper mapper = new ObjectMapper();
     byte[] value = "534619360@qq.com".getBytes();
     byte[] bytes = mapper.writeValueAsBytes(value);
