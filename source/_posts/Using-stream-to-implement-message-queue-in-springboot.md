@@ -11,7 +11,7 @@ date: 2020-06-28 21:54:57
 
 ## 前言
 
-`Redis5`新增了一个`Stream`的数据类型，这个类型作为消息队列来使用时弥补了`List`和`Pub/Sub`的不足并且提供了更强大的功能，比如`ack`机制以及“逻辑”上的分组功能，在有轻量消息队列使用需求时，使用这个新类型那是再好不过了。对于这个类型，在这里就不赘述了，想了解的话可以看一下这篇[文章](http://www.hellokang.net/redis/stream.html#_1-%E6%A6%82%E8%BF%B0)，在这里，我们就具体来讲一下在`SpringBoot`中的实践与踩坑。
+`Redis5`新增了一个`Stream`的数据类型，这个类型作为消息队列来使用时弥补了`List`和`Pub/Sub`的不足并且提供了更强大的功能，比如`ack`机制以及消费者组等概念，在有轻量消息队列使用需求时，使用这个新类型那是再好不过了。对于这个类型，在这里就不赘述了，想了解的话可以看一下这篇[文章](http://www.hellokang.net/redis/stream.html#_1-%E6%A6%82%E8%BF%B0)，在这里，我们就具体来讲一下在`SpringBoot`中的实践与踩坑。
 
 注意，`SpringBoot`版本需要大于2.2（即`spring-data-redis`需要大于2.2）。
 
@@ -29,11 +29,13 @@ date: 2020-06-28 21:54:57
 - `recordId`表示这个消息的ID，一般Redis服务器自动生成，也可以指定
 - `value`表示消息内容
 
-SpringBoot为我们提供了五种消息类型的抽象：`MapRecord`、`ObjectRecord`、`ByteRecord`、`ByteBufferRecord`、`StringMapRecord`，以及一个消息ID类型：`RecordId`。通过类名应该很好理解内部使用的什么数据结构，这里就不赘述。
+SpringBoot为我们提供了五种消息类型的抽象：`MapRecord`、`ObjectRecord`、`ByteRecord`、`ByteBufferRecord`、`StringRecord`，以及一个消息ID类型：`RecordId`。
+
+> 这里另外说一下：其实除开`ObjectRecord`，其他几个`Record`都是通过继承`MapRecord`扩展而来的。`StringRecord`中的消息内容也并非仅仅是一个字符串，而是一个键值都为字符串类型的`Map`（`ByteRecord`、`ByteBufferRecord`同理）。而`ObjectRecord`最后也会使用`HashMapper`转换成`MapRecord`。为什么最后都是操作`Map`类型？这是因为Stream中的内容是以多个`key-value`这种键值对的形式存储的。
 
 那么我们怎样去创建一个消息对象呢？
 
-一般来说我们使用前两个消息类型比较多，所以Spring-Data-Redis很贴心的在`Record`这个顶级接口中提供了两个静态方法用于构造`MapRecord`和`ObjectRecord`：
+一般来说我们使用前两个消息类型比较多，所以Spring-Data-Redis很贴心的在`Record`这个顶级接口中提供了两个静态方法用于直接构造`MapRecord`和`ObjectRecord`：
 
 ```java
 static <S, K, V> MapRecord<S, K, V> of(Map<K, V> map)
@@ -187,7 +189,7 @@ Consumer.from("group name", "consumer name")
 
 **StreamOffset**
 
-`StreamOffset`用于表示在某个Stream上的偏移量，它包含两部分内容跟，一个是stream的`key`，另一个是`ReadOffset`用于表示读取偏移量。前者应该不需要过多的解释，那么`ReadOffset`这个读取偏移量是干嘛用的呢？
+`StreamOffset`用于表示在某个Stream上的偏移量，它包含两部分内容，一个是stream的`key`，另一个是`ReadOffset`用于表示读取偏移量。前者应该不需要过多的解释，那么`ReadOffset`这个读取偏移量是干嘛用的呢？
 
 要搞清楚`ReadOffset`，我们首先要知道Stream中偏移量的含义，在Stream中偏移量既可以表示消费记录时的偏移量，又可以表示消费者组在Stream上的偏移量。还记得Redis中我们怎么读取Stream中的记录吗？
 
@@ -400,6 +402,7 @@ void test9() throws JsonProcessingException {
     byte[] bytes = mapper.writeValueAsBytes(value);
     System.out.println(new String(bytes));
     //输出"NTM0NjE5MzYwQHFxLmNvbQ=="
+}
 ```
 
 反应到stream中值就变成了\\"NTM0NjE5MzYwQHFxLmNvbQ==\\"（引号需要转义）。为了便于理解，我们可以使用设置使用json序列化器的`RedisTemplate`进行`add`断点debug测试看一下转换后的两个`Record`中的内容：
