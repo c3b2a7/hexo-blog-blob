@@ -49,7 +49,7 @@ Spring提供了`AbstractRoutingDataSource`类以方便开发者实现多数据�
 ### DataSourceConfiguration
 ```java
 /**
- * @author lolicom
+ * @author lolico
  */
 @Slf4j
 @Configuration
@@ -156,7 +156,7 @@ public class DynamicDataSourceContextHolder {
 ### DataSource注解
 ```java
 /**
- * @author lolicom
+ * @author lolico
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

@@ -9,7 +9,7 @@ tags: [Java,Spring]
 
 **异常：**
 ```java
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'empDao': Unsatisfied dependency expressed through field 'jdbcTemplate'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcTemplate' defined in class path resource [me/lolicom/App.class]: Unsatisfied dependency expressed through method 'jdbcTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [me/lolicom/App.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'empDao': Unsatisfied dependency expressed through field 'jdbcTemplate'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcTemplate' defined in class path resource [me/lolico/App.class]: Unsatisfied dependency expressed through method 'jdbcTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [me/lolico/App.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
 
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
@@ -26,7 +26,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
 	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:144)
 	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:85)
-	at me.lolicom.AppTest.IOC(AppTest.java:24)
+	at me.lolico.AppTest.IOC(AppTest.java:24)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -49,7 +49,7 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcTemplate' defined in class path resource [me/lolicom/App.class]: Unsatisfied dependency expressed through method 'jdbcTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [me/lolicom/App.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcTemplate' defined in class path resource [me/lolico/App.class]: Unsatisfied dependency expressed through method 'jdbcTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [me/lolico/App.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
@@ -65,7 +65,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
 	... 37 more
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [me/lolicom/App.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [me/lolico/App.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:484)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
@@ -87,12 +87,12 @@ Caused by: org.springframework.beans.BeanInstantiationException: Failed to insta
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
 	... 64 more
 Caused by: java.lang.NullPointerException
-	at me.lolicom.App.dataSource(App.java:30)
-	at me.lolicom.App$$EnhancerBySpringCGLIB$$5fe7f88f.CGLIB$dataSource$0(<generated>)
-	at me.lolicom.App$$EnhancerBySpringCGLIB$$5fe7f88f$$FastClassBySpringCGLIB$$c81ae23e.invoke(<generated>)
+	at me.lolico.App.dataSource(App.java:30)
+	at me.lolico.App$$EnhancerBySpringCGLIB$$5fe7f88f.CGLIB$dataSource$0(<generated>)
+	at me.lolico.App$$EnhancerBySpringCGLIB$$5fe7f88f$$FastClassBySpringCGLIB$$c81ae23e.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
-	at me.lolicom.App$$EnhancerBySpringCGLIB$$5fe7f88f.dataSource(<generated>)
+	at me.lolico.App$$EnhancerBySpringCGLIB$$5fe7f88f.dataSource(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,12 +112,12 @@ Caused by: java.lang.NullPointerException
 
 ```java
 Caused by: java.lang.NullPointerException
-	at me.lolicom.App.dataSource(App.java:30)
-	at me.lolicom.App$$EnhancerBySpringCGLIB$$5fe7f88f.CGLIB$dataSource$0(<generated>)
-	at me.lolicom.App$$EnhancerBySpringCGLIB$$5fe7f88f$$FastClassBySpringCGLIB$$c81ae23e.invoke(<generated>)
+	at me.lolico.App.dataSource(App.java:30)
+	at me.lolico.App$$EnhancerBySpringCGLIB$$5fe7f88f.CGLIB$dataSource$0(<generated>)
+	at me.lolico.App$$EnhancerBySpringCGLIB$$5fe7f88f$$FastClassBySpringCGLIB$$c81ae23e.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
-	at me.lolicom.App$$EnhancerBySpringCGLIB$$5fe7f88f.dataSource(<generated>)
+	at me.lolico.App$$EnhancerBySpringCGLIB$$5fe7f88f.dataSource(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -175,10 +175,10 @@ public class App {
 2019-12-17 14:20:49,658 [main] [DEBUG] - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7e0babb1
 2019-12-17 14:20:49,932 [main] [DEBUG] - Loaded 15 bean definitions from class path resource [applicationContext.xml]
 2019-12-17 14:20:49,960 [main] [DEBUG] - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
-2019-12-17 14:20:50,103 [main] [DEBUG] - Identified candidate component class: file [D:\ws_idea\springmvc\target\classes\me\lolicom\dao\EmpDao.class]
+2019-12-17 14:20:50,103 [main] [DEBUG] - Identified candidate component class: file [D:\ws_idea\springmvc\target\classes\me\lolico\dao\EmpDao.class]
 2019-12-17 14:20:50,228 [main] [DEBUG] - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
 2019-12-17 14:20:50,230 [main] [DEBUG] - Creating shared instance of singleton bean 'beanFactoryPostProcessor'
-2019-12-17 14:20:50,231 [main] [DEBUG] - Creating shared instance of singleton bean 'me.lolicom.App#0'
+2019-12-17 14:20:50,231 [main] [DEBUG] - Creating shared instance of singleton bean 'me.lolico.App#0'
 2019-12-17 14:20:50,234 [main] [INFO] - @Bean method App.beanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
 2019-12-17 14:20:50,248 [main] [DEBUG] - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
 2019-12-17 14:20:50,249 [main] [DEBUG] - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
@@ -195,16 +195,16 @@ public class App {
 2019-12-17 14:20:50,366 [main] [DEBUG] - Creating shared instance of singleton bean 'empDao'
 2019-12-17 14:20:50,378 [main] [DEBUG] - Creating shared instance of singleton bean 'jdbcTemplate'
 2019-12-17 14:20:50,383 [main] [DEBUG] - Creating shared instance of singleton bean 'dataSource'
-2019-12-17 14:20:50,386 [main] [WARN] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'empDao': Unsatisfied dependency expressed through field 'jdbcTemplate'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcTemplate' defined in class path resource [me/lolicom/App.class]: Unsatisfied dependency expressed through method 'jdbcTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [me/lolicom/App.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+2019-12-17 14:20:50,386 [main] [WARN] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'empDao': Unsatisfied dependency expressed through field 'jdbcTemplate'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcTemplate' defined in class path resource [me/lolico/App.class]: Unsatisfied dependency expressed through method 'jdbcTemplate' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [me/lolico/App.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
 ```
 注意第六条日志记录及以后几条记录：
 ```log
 2019-12-17 14:20:50,230 [main] [DEBUG] - Creating shared instance of singleton bean 'beanFactoryPostProcessor'
-2019-12-17 14:20:50,231 [main] [DEBUG] - Creating shared instance of singleton bean 'me.lolicom.App#0'
+2019-12-17 14:20:50,231 [main] [DEBUG] - Creating shared instance of singleton bean 'me.lolico.App#0'
 2019-12-17 14:20:50,234 [main] [INFO] - @Bean method App.beanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
 ```
 
-Spring容器启动：创建'beanFactoryPostProcessor'Bean，再创建'me.lolicom.App#0'Bean。因为beanFactoryPostProcessor定义在App这个配置类中即依赖于'me.lolicom.App#0'Bean，那么Spring容器创建'beanFactoryPostProcessor'Bean导致提前实例化'me.lolicom.App#0'Bean，而此时Spring容器处于还未实例化所有Bean（只是加载了BeanDefinition）的生命周期，那么在创建'me.lolicom.App#0'Bean的时候自然不会去注入Environment属性，只是先实例化出来并未注入属性，参考Spring实例化Bean的三级缓存机制（提前暴露Bean以解决循环依赖的问题)。所以env为null，而后续实例化'dataSource'Bean，使用为null的env去get属性值当然就空指针异常了。
+Spring容器启动：创建'beanFactoryPostProcessor'Bean，再创建'me.lolico.App#0'Bean。因为beanFactoryPostProcessor定义在App这个配置类中即依赖于'me.lolico.App#0'Bean，那么Spring容器创建'beanFactoryPostProcessor'Bean导致提前实例化'me.lolico.App#0'Bean，而此时Spring容器处于还未实例化所有Bean（只是加载了BeanDefinition）的生命周期，那么在创建'me.lolico.App#0'Bean的时候自然不会去注入Environment属性，只是先实例化出来并未注入属性，参考Spring实例化Bean的三级缓存机制（提前暴露Bean以解决循环依赖的问题)。所以env为null，而后续实例化'dataSource'Bean，使用为null的env去get属性值当然就空指针异常了。
 
 事实上，通过断点调试也验证了这个结论:
 ![断点调试](https://lolico.griouges.cn/images/38Ri.png)
@@ -215,7 +215,7 @@ Spring容器启动：创建'beanFactoryPostProcessor'Bean，再创建'me.lolicom
 @Bean方法App.beanFactoryPostProcessor是非静态的，并返回可分配给Spring的BeanFactoryPostProcessor接口的对象。这将导致无法在方法的声明@Configuration类中处理诸如@ Autowired，@ Resource和@PostConstruct之类的注释。在此方法中添加“静态”修饰符可避免这些容器生命周期问题；有关完整的详细信息，请参见@Bean javadoc。
 
 ## 解决
-第一想到的是：既然创建'me.lolicom.App#0'Bean的时候不会注入env属性，那么改为构造器强制注入,应该就可以了吧：
+第一想到的是：既然创建'me.lolico.App#0'Bean的时候不会注入env属性，那么改为构造器强制注入,应该就可以了吧：
 ```java
     public App(Environment env) {
         this.env = env;
@@ -223,7 +223,7 @@ Spring容器启动：创建'beanFactoryPostProcessor'Bean，再创建'me.lolicom
 ```
 事实上是不行的：
 
-`java.lang.NoSuchMethodException: me.lolicom.App$$EnhancerBySpringCGLIB$$e5ab47a1.<init>()`
+`java.lang.NoSuchMethodException: me.lolico.App$$EnhancerBySpringCGLIB$$e5ab47a1.<init>()`
 
 spring在使用cglib动态代理生成App实例的时候调用默认的无参构造器。但cglib现在也并不要求代理类一定要有默认无参构造器了，可能是Spring底层实现的原因？
 

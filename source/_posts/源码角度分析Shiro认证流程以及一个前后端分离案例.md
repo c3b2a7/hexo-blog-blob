@@ -499,9 +499,9 @@ public class JWTToken implements HostAuthenticationToken {
 
 **JwtHttpAuthenticationFilter**
 ```java
-package me.lolicom.blog.web.filter;
+package me.lolico.blog.web.filter;
 
-import me.lolicom.blog.web.JWTToken;
+import me.lolico.blog.web.JWTToken;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.subject.Subject;
@@ -518,7 +518,7 @@ import java.util.Locale;
 import java.util.Set;
 
 /**
- * @author lolicom
+ * @author lolico
  */
 public class JwtHttpAuthenticationFilter extends AuthenticatingFilter {
     
@@ -1061,7 +1061,7 @@ public class JwtUtils {
 ```java
 @Configuration
 @EnableConfigurationProperties(SecurityProperties.class)
-@ConditionalOnProperty(name = "me.lolicom.blog.security.enable", matchIfMissing = true)
+@ConditionalOnProperty(name = "me.lolico.blog.security.enable", matchIfMissing = true)
 public class ShiroConfig {
     
     @Bean
