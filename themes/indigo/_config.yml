@@ -22,7 +22,7 @@ menu:
     url: /categories
   github:
     text: Github
-    url: https://github.com/LOLICOL1
+    url: https://github.com/c3b2a7
     target: _blank
   twitter:
     text: Twitter
@@ -123,8 +123,8 @@ gitment: false
 
 # use gitalk://github.com/gitalk/gitalk
 gitalk: 
- owner: LOLICOL1
- repo: lolicol1.github.io
+ owner: c3b2a7
+ repo: c3b2a7.github.io
  client_id: 0f06d8c6e963192695db
  client_secret: 59650bb92bb41ad1bc07668bf4fab39ffeb785d9
 
