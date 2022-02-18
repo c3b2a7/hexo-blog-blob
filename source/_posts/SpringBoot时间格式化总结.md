@@ -22,7 +22,6 @@ tags: [Java,Spring,SpringBoot,Web]
 对于表单请求，格式化时间有如下方法：
 
 - 配置spring.mvc.format.date
-
 - 配置spring.mvc.format.time
 - 配置spring.mvc.format.date-time
 - 定义Converter
