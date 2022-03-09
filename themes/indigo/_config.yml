@@ -9,28 +9,24 @@
 #    target: _blank    是否跳出，省略则在当前页面打开
 menu:
   home:
-    text: Home
+    text: 主页
     url: /
   archives:
-    text: Archives
+    text: 归档
     url: /archives
   tags:
-    text: Tags
+    text: 标签
     url: /tags
   th-list:
-    text: Categories
+    text: 分类
     url: /categories
-  github:
-    text: Github
-    url: https://github.com/c3b2a7
-    target: _blank
-  twitter:
-    text: Twitter
-    url: https://twitter.com/_lovebirdy
-    target: _blank
-  info-circle:
-    text: About
-    url: /about
+  # github:
+    # text: Github
+    # url: https://github.com/c3b2a7
+    # target: _blank
+  # info-circle:
+    # text: 关于
+    # url: /about
 
 # 你的头像url
 avatar: /img/avatar.jpg
@@ -48,9 +44,9 @@ email: 534619360@qq.com
 color: '#3F51B5'
 
 # 页面标题
-tags_title: Tags
-archives_title: Archives
-categories_title: Categories
+tags_title: 标签
+archives_title: 归档
+categories_title: 分类
 
 # 文章截断
 excerpt_render: false
@@ -164,8 +160,8 @@ visit_counter:
 
 # 动态定义title
 title_change:
-  normal: (つェ⊂)咦!又好了!
-  leave: 朸?渄恴g个?喏o溊客??f
+  # normal: (つェ⊂)咦!又好了!
+  # leave: 朸?渄恴g个?喏o溊客??f
 
 # 设置为 true 发布后将使用 unpkg cdn 最新的主题样式
 # 如果想让你的自定义样式生效，把此项设为 false
@@ -175,4 +171,4 @@ cdn: true
 lightbox: true
 
 # icp备案号  ICP_license: 京ICP备1234556号-1
-ICP_license: 赣ICP备18010727号
+# ICP_license: 赣ICP备18010727号

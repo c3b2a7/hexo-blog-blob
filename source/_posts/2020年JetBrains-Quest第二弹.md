@@ -1,5 +1,5 @@
 ---
-title: 2020年JetBrains Quest 第二弹
+title: 2020年JetBrains Quest第二弹
 categories: 不正常的文章
 date: 2020-03-11 15:33:33
 tags: JetBrains Quest

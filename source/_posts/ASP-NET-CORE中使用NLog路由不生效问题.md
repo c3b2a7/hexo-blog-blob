@@ -1,5 +1,5 @@
 ---
-title: Asp.Net Core中使用NLog日志时NLog路由不生效只输出Info级别日志的问题
+title: Asp.Net Core中使用NLog路由不生效问题
 tags:
   - Asp.Net Core
   - NLog

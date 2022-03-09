@@ -1,5 +1,5 @@
 ---
-title: 部署Asp.Net Core应用并使用Nginx反代时遇到的两个问题
+title: 部署Asp.Net Core应用时遇到的两个问题
 tags:
   - Asp.Net Core
   - Nginx

@@ -1,5 +1,5 @@
 ---
-title: SpringBoot 2.x AOP默认使用CGLIB代理
+title: SpringBoot2中AOP默认使用CGLIB代理
 tags:
   - SpringBoot
   - Spring

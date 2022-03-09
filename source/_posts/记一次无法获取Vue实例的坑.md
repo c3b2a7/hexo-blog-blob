@@ -1,5 +1,5 @@
 ---
-title: VueJS学习笔记：记一次this无法获取vue实例的坑
+title: 记一次无法获取Vue实例的坑
 tags: Vue.js
 categories: 正常的文章
 date: 2020-04-22 22:16:44

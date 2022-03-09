@@ -1,5 +1,5 @@
 ---
-title: SpringSecurity 跨域
+title: SpringSecurity跨域
 categories: 正常的文章
 date: 2020-04-27 00:01:12
 tags: [Spring,SpringBoot,Security,CORS,Web]

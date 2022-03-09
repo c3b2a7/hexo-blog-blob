@@ -2,7 +2,6 @@
 title: Chevereto-在服务器上搭建自己的图床
 categories: 不正常的文章
 date: 2018-08-09 15:43:03
-tags: ？？？
 ---
 
 ![](https://lolico.griouges.cn/images/h4J.png)

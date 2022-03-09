@@ -1,9 +1,9 @@
 ---
-title: '单文件发布时${basedir}无效导致文件日志无法写入的问题'
+title: WPF单文件发布${basedir}无效导致日志无法写入的问题
 tags:
   - WPF
   - NLog
-  - .Net Core 3
+  - Asp.Net Core
 categories: 正常的文章
 date: 2020-06-20 12:51:36
 ---

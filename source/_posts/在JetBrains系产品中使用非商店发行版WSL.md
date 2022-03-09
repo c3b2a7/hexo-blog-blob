@@ -1,5 +1,5 @@
 ---
-title: 解决JetBrains产品中无法使用非商店发行版本的WSL的问题
+title: 在JetBrains系产品中使用非商店发行版WSL
 categories: 正常的文章
 date: 2020-05-19 17:48:45
 tags: [WSL,IDEA,WebStorm,PyCharm]

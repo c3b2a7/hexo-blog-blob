@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: '萌面喵喵侠的个人博客'
+title: '萌面喵喵侠'
 subtitle: ''
 description: 萌面喵喵侠的个人博客
 keywords: '萌面喵喵侠,coding and thinking'
@@ -58,7 +58,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 6
   order_by: -date
 
 # Category & Tag
@@ -81,7 +81,7 @@ use_date_for_updated: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 10
+per_page: 0
 pagination_dir: page
 
 # Include / Exclude file(s)

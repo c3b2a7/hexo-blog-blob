@@ -1,5 +1,5 @@
 ---
-title: VueJS学习笔记：总结
+title: VueJS学习笔记
 tags: Vue.js
 categories: 正常的文章
 date: 2020-04-24 22:47:31
