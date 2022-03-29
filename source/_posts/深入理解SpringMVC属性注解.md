@@ -71,9 +71,6 @@ SpringMVC将请求消息绑定到`User对象`，然后以`user`为键将`User对
 如果希望在多个请求之间共享某个*模型属性数据*，则可以在控制器类上标注一个`@SessionAttributes`，SpringMVC会将**模型中**对应的属性**暂存**到`HttpSession`中。为什么这么说呢？后面会慢慢分析，先来看一个`@SessionAttributes`使用实例：
 
 ```java UserController.java
-/**
- * @author Lolico li
- */
 @Controller
 @RequestMapping("/user")
 @SessionAttributes("user") // 1 会将2处的模型属性透明的保存到HttpSession中

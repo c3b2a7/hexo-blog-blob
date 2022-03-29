@@ -27,9 +27,6 @@ tags: [Java,Spring,JPA]
 假设现在有好几张表：user、rank ...，对于所有的有动态更新需求的表都要进行实现的话，那么我们可以这样做：
 先定义一个`BaseRepository`
 ```java
-/**
- * @author lolico
- */
 @NoRepositoryBean
 public interface BaseRepository<T, ID extends Serializable> extends JpaRepository<T, ID>, JpaSpecificationExecutor<T> {
     
@@ -56,9 +53,6 @@ public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRep
 ```
 然后在配置类上加上注解`@EnableJpaRepositories(repositoryBaseClass = BaseRepositoryImpl.class)`，看到这里，应该有朋友会感觉有点熟悉。这正是我们为所有Repository自定义公共方法的实现方法，我们在BaseRepository中定义共有方法，然后在`BaseRepositoryImpl`中提供实现，后续所有继承`BaseRepository`这个接口的Repository都可以获得这个默认实现，因为我们在注解`@EnableJpaRepositories(repositoryBaseClass = BaseRepositoryImpl.class)`中指定了Repository的默认实现用BaseRepositoryImpl，而BaseRepositoryImpl继承`SimpleJpaRepository`这个jpa默认的实现，所以我们相当于扩展JpaRepository，好的，扯远...所以现在我们只要在BaseRepository中定义`T dynamicUpdate(T t);`这样一个方法,然后在BaseRepositoryImpl中提供实现，那么所有repository都可以获得这个实现，所以，说到最后，怎么实现这样一个方法呢？
 ```java
-/**
- * @author lolico
- */
 @Transactional(readOnly = true)
 public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRepository<T, ID> implements BaseRepository<T, ID> {
     private Class<T> entityClass;
@@ -99,9 +93,6 @@ public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRep
 
 ## 测试
 ```java User.java
-/**
- * @author lolico
- */
 @Entity
 @Table(name = "user")
 @DynamicUpdate

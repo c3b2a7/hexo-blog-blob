@@ -48,9 +48,6 @@ Spring提供了`AbstractRoutingDataSource`类以方便开发者实现多数据�
 
 ### DataSourceConfiguration
 ```java
-/**
- * @author lolico
- */
 @Slf4j
 @Configuration
 public class DataSourceConfiguration implements ApplicationContextAware {
@@ -155,9 +152,6 @@ public class DynamicDataSourceContextHolder {
 ```
 ### DataSource注解
 ```java
-/**
- * @author lolico
- */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited

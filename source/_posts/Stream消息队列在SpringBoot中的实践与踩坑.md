@@ -243,9 +243,6 @@ container.start();
 完整代码：
 
 ```java
-/**
- * @author Lolico Li
- */
 @Component
 public class StreamConsumerRunner implements ApplicationRunner, DisposableBean {
 
