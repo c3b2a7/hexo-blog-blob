@@ -5,7 +5,6 @@ title: Java知识小记
 tags:
 ---
 
-# Java知识小记
 
 1、一个字符的`String.length()`是多少？
 

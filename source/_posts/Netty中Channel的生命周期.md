@@ -6,16 +6,15 @@ categories: 正常的文章
 date: 2022-03-06 22:57:33
 ---
 
-# Netty中Channel的生命周期
 
 ## 服务端
 
-### A `Channel` in an parent `EventLoopGroup`
+### 父EventLoopGroup中的Channel
 
 Registered -> Bind -> Active -> [Read -> Read Complete] -> Close -> Inactive -> Unregistered
 
 
-### A `Channel` in an child `EventLoopGroup`
+### 子EventLoopGroup中的Channel
 
 Registered -> Active -> [(Read/Write -> Read Complete/Flush)、Event Triggered、Exception Caught] -> Inactive ->Unregistered
 
