@@ -1,7 +1,13 @@
 ---
-title: aop详解
-tags: [Spring,AOP,AspectJ]
+title: AOP详解
+tags:
+  - Spring
+  - AOP
+  - AspectJ
+categories: 正常的文章
+date: 2020-07-22 23:01:12
 ---
+
 
 ## 什么是AOP？
 
