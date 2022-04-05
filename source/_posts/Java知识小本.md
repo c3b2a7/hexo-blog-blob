@@ -18,7 +18,7 @@ Java中字符采用Unicode（UTF16）编码，即16位（2字节）一个单元�
 
 是一个`Filter`、而且是`FilterChainProxy`，其内部包含多个`SecurityFilterChain`，根据请求匹配一个`SecurityFilterChain`并应用其中的`Filter`。
 
-![image-20220330234452227](https://s2.loli.net/2022/03/30/rGf8lqhwI5tpYA9.png)
+![](https://s2.loli.net/2022/03/30/rGf8lqhwI5tpYA9.png)
 
 4、简单说一下`Synchronized`和`AQS`有什么不同？
 
