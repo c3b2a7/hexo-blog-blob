@@ -223,6 +223,6 @@ controler添加测试方法
     }
 ```
 post测试：
-![](https://lolico.griouges.cn/images/NVWy.png)
+![](https://raw-1257226137.file.myqcloud.com/images/NVWy.png)
 测试通过，打印日志:
-![](https://lolico.griouges.cn/images/N7a2.png)
+![](https://raw-1257226137.file.myqcloud.com/images/N7a2.png)
