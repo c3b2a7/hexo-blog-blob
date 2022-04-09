@@ -5,7 +5,7 @@ reward: true       # 打赏，可选，默认开启
 ---
 ## 关于我（雾
 
-![啵啵birdyヾ(≧▽≦*)o](https://raw-1257226137.file.myqcloud.com/images/Wfv.jpg)
+![啵啵birdyヾ(≧▽≦*)o](https://lolico.griouges.cn/images/Wfv.jpg)
 
 ## 时间轴
 

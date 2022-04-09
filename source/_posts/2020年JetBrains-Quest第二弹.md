@@ -7,7 +7,7 @@ tags: JetBrains Quest
 
 2020年3月11，JetBrains Quest第二弹到来：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314153806.png)
+![](https://lolico.griouges.cn/images/20200314153806.png)
 
 > .spleh A+lrtC/dmC .thgis fo tuo si ti semitemos ,etihw si txet nehw sa drah kooL .tseretni wohs dluohs uoy ecalp a si ,dessecorp si xat hctuD erehw esac ehT .sedih tseuq fo txen eht erehw si ,deificeps era segaugnal cificeps-niamod tcudorp ehT
 
@@ -24,11 +24,11 @@ tags: JetBrains Quest
 
 来到[MPS产品页](https://www.jetbrains.com/mps/)，搜索`Dutch tax`：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314155001.png)
+![](https://lolico.griouges.cn/images/20200314155001.png)
 
 点击`Read MPS case study`跳转到一个PDF文件：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314155326.png)
+![](https://lolico.griouges.cn/images/20200314155326.png)
 
 还记得这个提示吗：
 
@@ -36,7 +36,7 @@ tags: JetBrains Quest
 
 `Ctrl+A`试一下：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314155427.png)
+![](https://lolico.griouges.cn/images/20200314155427.png)
 
 右边有4行文字隐藏了，复制出来康康：
 
@@ -49,21 +49,21 @@ tags: JetBrains Quest
 在这个页面兜兜转转，搜索18650，怎么都发现不了什么线索，参考这个[帖子评论区](https://v2ex.com/t/651961)，发现这些数字加起来其实就是18650
 而线索就藏在分享的编辑栏里面：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314160727.png)
+![](https://lolico.griouges.cn/images/20200314160727.png)
 
 点击分享：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314160831.png)
+![](https://lolico.griouges.cn/images/20200314160831.png)
 
 > I have found the JetBrains Quest! Sometimes you just need to look closely at the Haskell language, Hello,World! in the hackathon lego brainstorms project https://blog.jetbrains.com/blog/2019/11/22/jetbrains-7th-annual-hackathon/#JetBrainsQuest
 
 给了个博客链接，点进去搜索`lego brainstorms`：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314161059.png)
+![](https://lolico.griouges.cn/images/20200314161059.png)
 
 还是没有头绪，F12开发者模式查看这种图片：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314161734.png)
+![](https://lolico.griouges.cn/images/20200314161734.png)
 
 发现在alt属性中有这么一串文字：
 
@@ -78,19 +78,19 @@ tags: JetBrains Quest
 
 搜索`Quest`并点进去：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314162653.png)
+![](https://lolico.griouges.cn/images/20200314162653.png)
 
 看一下啥是`cheat at Konami games`：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314162956.png)
+![](https://lolico.griouges.cn/images/20200314162956.png)
 
 `上上下下左右左右BA`，原来还有个名字叫做`Konami Code`，相当于一个隐藏游戏的启动代码。
 魂斗罗30条命！我来辽！！！
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314163313.png)
+![](https://lolico.griouges.cn/images/20200314163313.png)
 
 ↑↑↓↓←→←→BA
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314163436.png)
+![](https://lolico.griouges.cn/images/20200314163436.png)
 
 打掉所有块，3个月奖励到手。

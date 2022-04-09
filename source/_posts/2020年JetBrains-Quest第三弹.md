@@ -7,7 +7,7 @@ tags: JetBrains Quest
 
 2020年3月13，JetBrains Quest第三弹到来：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200314165330.png)
+![](https://lolico.griouges.cn/images/20200314165330.png)
 
 <!-- more -->
 

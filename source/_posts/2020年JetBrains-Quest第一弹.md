@@ -7,7 +7,7 @@ tags: JetBrains Quest
 
 2020年3月9日，JetBrains官方推特发布了这么一条消息：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200313155924.png)
+![](https://lolico.griouges.cn/images/20200313155924.png)
 
 > 48 61 76 65 20 79 6f 75 20 73 65 65 6e 20 74 68 65 20 73 6f 75 72 63 65 20 63 6f 64 65 20 6f 66 20 74 68 65 20 4a 65 74 42 72 61 69 6e 73 20 77 65 62 73 69 74 65 3f
 
@@ -18,7 +18,7 @@ tags: JetBrains Quest
 问我们是否看过JetBrains网站的源码
 打开[JetBrains官网](https://www.jetbrains.com)查看源码，搜索`JetBrains Quest`：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200313160807.png)
+![](https://lolico.griouges.cn/images/20200313160807.png)
 
 >  Welcome to the JetBrains Quest.
  ​
@@ -36,7 +36,7 @@ tags: JetBrains Quest
 谷歌浏览器无痕模式访问[JetBrains产品页](https://www.jetbrains.com/products.html)（实际上我不开无痕模式进入也是可以的）
 在产品里找到一个叫`JK`的产品，点击`Learn More`：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200313162013.png)
+![](https://lolico.griouges.cn/images/20200313162013.png)
 
 >  You have discovered our JetBrains Quest! If you don’t know what this is, you should start from Twitter, Facebook or LinkedIn.
  ​
@@ -52,14 +52,14 @@ tags: JetBrains Quest
 
 重定向来到了这里：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200313163046.png)
+![](https://lolico.griouges.cn/images/20200313163046.png)
 
 如果你对JetBrains网站很了解你就会知道这个Logo是youtrack，也就是JebBrains网站的问题区，将后面的问题编码输进去，
 得到链接：[https://youtrack.jetbrains.com/issue/MPS-31816](https://youtrack.jetbrains.com/issue/MPS-31816)
 
 跳转到这个页面：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200313162923.png)
+![](https://lolico.griouges.cn/images/20200313162923.png)
 
 > JetBrains Quest
  ​

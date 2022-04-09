@@ -193,12 +193,12 @@ public interface UserRepository extends CustomUserRepository, BaseRepository<Use
 3&emsp;&emsp;test&emsp;&emsp;test3&emsp;&emsp;test3@ttt
 执行方法，输出：
 
-![结果](https://raw-1257226137.file.myqcloud.com/images/NUKi.png) 
+![结果](https://lolico.griouges.cn/images/NUKi.png) 
 两条sql,先查询再更新，更新的sql中可以看到只对uname进行set，这是因为我们在User实体类上注解了`@DynamicUpdate`
 **注意**这个注解并不是动态更新记录的意思，这个注解的意思是在进行merge更新时，会对比数据库中的记录，如果不一致就生成对应set的语句，所以可以看到我们测试输出的更新sql语句里只有对uname进行set的sql，因为其他字段的值与数据库记录是一致的，利用这个注解我们可以实现对于数据库中设置默认值比如`DateTime`，在使用`@DynamicInsert`后就不会插入`null`值，而是使用默认的值。讲的有点乱，还没理解的可以去看看这篇文章[关于@DynamicUpdate的误解](https://juejin.im/post/5c68099ef265da2de04aa82f)
 现在看下数据库中id=3的记录是否更新了uname：
 
-![更新后的记录](https://raw-1257226137.file.myqcloud.com/images/N6Uj.png) 
+![更新后的记录](https://lolico.griouges.cn/images/N6Uj.png) 
 与输出的一致，很完美！
 
 ## 总结 

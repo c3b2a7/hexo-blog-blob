@@ -416,15 +416,15 @@ void test() {
 
 运行测试并断点查看`MapRecord`和`ByteRecord`：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200628204658.png)
+![](https://lolico.griouges.cn/images/20200628204658.png)
 
 使用Redis Desktop Manager查看值：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200628204930.png)
+![](https://lolico.griouges.cn/images/20200628204930.png)
 
 测试结束终端抛出上面提到的异常。这个问题解决办法就是使用`String`序列化器也就是使用`StringRedisTemplate`，因为这个序列化器不能序列化`byte[]`类型的对象，使用这个序列化器在序列化时如果已经是`byte[]`，那么就会直接返回原`byte[]`：
 
-![](https://raw-1257226137.file.myqcloud.com/images/20200628210421.png)
+![](https://lolico.griouges.cn/images/20200628210421.png)
 
 更具体的细节可以跟着`add`方法debug一遍。
 

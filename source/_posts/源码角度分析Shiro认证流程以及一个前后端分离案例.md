@@ -20,7 +20,7 @@ Shiro进行认证的本质还是通过过滤器进行拦截，过滤器拦截后
 Shiro中的过滤器其实还是Servlet中的Filter，只不过对其进行了封装。
 
 先来看下Shiro中Filter的类图
-![Shiro Filter](https://raw-1257226137.file.myqcloud.com/images/NKaB.png)
+![Shiro Filter](https://lolico.griouges.cn/images/NKaB.png)
 
 - `AbstractFilter`：提供了简化的初始化逻辑和access到初始化参数，并且提供了`getInitParam(String paramName)`方法获取。
 - `NameableFilter`：为Filter提供`name`属性值，可通过getter和setter方法获取和设置。
