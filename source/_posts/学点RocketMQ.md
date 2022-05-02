@@ -17,7 +17,7 @@ tags: MessageQueue
 
 生产者先将消息投递到一个叫做队列的容器中，消费者不断从这个容器中取出消息[^1]进行消费，仅此而已。
 
-![image-20220108204854445](https://s2.loli.net/2022/01/08/dPEVqTYy9m8Lxjw.png)
+![](https://s2.loli.net/2022/01/08/dPEVqTYy9m8Lxjw.png)
 
 上图便是消息队列最**原始的模型**，它包含了两个关键词：消息和队列。
 
@@ -34,7 +34,7 @@ tags: MessageQueue
 
 最初的消息队列就是上一节讲的原始模型，它是一个严格意义上的队列（Queue）。消息按照什么顺序写进去，就按照什么顺序读出来。不过，队列没有 “读” 这个操作，读就是出队，从队头中 “删除” 这个消息。
 
-![image-20220108205116346](https://s2.loli.net/2022/01/08/cDBuRJMgZtWOTCz.png)
+![](https://s2.loli.net/2022/01/08/cDBuRJMgZtWOTCz.png)
 
 这便是队列模型：它允许多个生产者往同一个队列发送消息。但是，如果有多个消费者，实际上是竞争的关系，也就是一条消息只能被其中一个消费者接收到，消费完就不能再次被消费。
 
@@ -46,7 +46,7 @@ tags: MessageQueue
 
 为了解决这个问题，就演化出了另外一种消息模型：**发布-订阅模型**。
 
-![image-20220108205149218](https://s2.loli.net/2022/01/08/1W84MyeRzusVBrC.png)
+![](https://s2.loli.net/2022/01/08/1W84MyeRzusVBrC.png)
 
 在发布-订阅模型中，存放消息的容器变成了 “主题”，消费者在接收消息之前需要先 “订阅主题”。最终，每个消费者都可以收到同一个主题的全量消息。
 
@@ -98,7 +98,7 @@ tags: MessageQueue
 
 ### RocketMQ中的概念
 
-![img](https://s2.loli.net/2022/01/08/VFlgEfhbtrz3DIj.png)
+![](https://s2.loli.net/2022/01/08/VFlgEfhbtrz3DIj.png)
 
 RocketMQ核心由四部分组成，分别是**NameServer**、**Broker**、**Producer**以及**Consumer**。
 
@@ -149,25 +149,25 @@ RocketMQ作为阿里开源的一款高性能、高吞吐量的消息中间件，
 
 假如生产者产生了2条消息：M1、M2，要保证这两条消息的顺序，应该怎样做？你脑中想到的可能是这样：
 
-![image-20220108235348191](https://s2.loli.net/2022/01/08/7v8x2fJsbDZQc9r.png)
+![](https://s2.loli.net/2022/01/08/7v8x2fJsbDZQc9r.png)
 
 M1发送到S1后，M2发送到S2，如果要保证M1先于M2被消费，那么需要M1到达消费端后，通知S2，然后S2再将M2发送到消费端。
 
 这个模型存在的问题是，如果M1和M2分别发送到两台Broker上，就不能保证M1一定先达到，也就不能保证M1被先消费，那么就需要在MQ Broker集群维护消息的顺序。那么如何解决？一种简单的方式就是将M1、M2发送到同一个Broker上：
 
-![image-20220109012300101](https://s2.loli.net/2022/01/09/VrdigoQ6DwNnOk7.png)
+![](https://s2.loli.net/2022/01/09/VrdigoQ6DwNnOk7.png)
 
 这样可以保证M1先于M2到达MQ Broker（客户端等待M1成功后再发送M2），根据队列先进先出的原则，M1会先于M2被消费，这样就保证了消息的顺序。
 
 这个模型，理论上可以保证消息的顺序，但在实际运用中你应该会遇到下面的问题：
 
-![image-20220109014152500](https://s2.loli.net/2022/01/09/mJQnxjZAk2GHUiT.png)
+![](https://s2.loli.net/2022/01/09/mJQnxjZAk2GHUiT.png)
 
 网络延迟问题。只要将消息从一台服务器发往另一台服务器，就会存在网络延迟问题。如上图所示，如果发送M1耗时大于发送M2的耗时，那么M2就先被消费，仍然不能保证消息的顺序。即使M1和M2同时到达消费端，由于不清楚消费端1和消费端2的负载情况，仍然有可能出现M2先于M1被消费。如何解决这个问题？将M1和M2发往同一个消费者即可，且发送M1后，需要消费端响应成功后才能发送M2。
 
 但又会引入另外一个问题，如果发送M1后，消费端1没有响应，那是继续发送M2呢，还是重新发送M1？一般为了保证消息至少被消费一次[^9]，肯定会选择重发M1到另外一个消费端2，就如下图所示。
 
-![image-20220109013847952](https://s2.loli.net/2022/01/09/FhmzuITX4pZWv3q.png)
+![](https://s2.loli.net/2022/01/09/FhmzuITX4pZWv3q.png)
 
 这样的模型就严格保证消息的顺序，细心的你仍然会发现问题，消费端1没有响应Server时有两种情况，一种是M1确实没有到达，另外一种情况是消费端1已经响应，但是Server端没有收到。如果是第二种情况，重发M1，就会造成M1被重复消费。也就是我们后面要说的第二个问题，消息重复问题。
 
@@ -233,7 +233,7 @@ private SendResult send()  {
 
 `Producer`轮询某topic下的所有队列的方式来实现发送方的负载均衡，如下图所示：
 
-![img](https://s2.loli.net/2022/04/11/6G4AXyCJj9fFlto.png)
+![](https://s2.loli.net/2022/04/11/6G4AXyCJj9fFlto.png)
 
 首先分析一下RocketMQ的客户端发送消息的源码：
 
@@ -301,7 +301,7 @@ ${rocketmq.home}/store/consumequeue/${topicName}/${queueId}/${fileName}
 
 Consume Queue文件组织，如图所示：
 
-![img](https://s2.loli.net/2022/04/11/vyoNJKg9CZmdfSw.png)
+![](https://s2.loli.net/2022/04/11/vyoNJKg9CZmdfSw.png)
 
 1. 根据`topic`和`queueId`来组织文件，图中TopicA有两个队列0,1，那么TopicA和QueueId=0组成一个ConsumeQueue，TopicA和QueueId=1组成另一个ConsumeQueue。
 2. 按照消费端的`GroupName`来分组重试队列，如果消费端消费失败，消息将被发往重试队列中，比如图中的`%RETRY%ConsumerGroupA`。
@@ -311,7 +311,7 @@ Consume Queue文件组织，如图所示：
 
 Consume Queue中存储单元是一个20字节定长的二进制数据，顺序写顺序读，如下图所示：
 
-![img](https://s2.loli.net/2022/04/11/1layLKp3utAqST6.png)
+![](https://s2.loli.net/2022/04/11/1layLKp3utAqST6.png)
 
 1. CommitLog Offset是指这条消息在Commit Log文件中的实际偏移量
 2. Size存储中消息的大小
@@ -328,7 +328,7 @@ ${user.home}\store\${commitlog}\${fileName}
 
 CommitLog的消息存储单元长度不固定，文件顺序写，随机读。消息的存储结构如下表所示，按照编号顺序以及编号对应的内容依次存储。
 
-![img](https://s2.loli.net/2022/04/11/eOFKHkidxRDUwN5.png)
+![](https://s2.loli.net/2022/04/11/eOFKHkidxRDUwN5.png)
 
 ##### 消息存储实现
 
@@ -379,7 +379,7 @@ synchronized (this) {
 
 如果一个消息包含key值的话，会使用IndexFile存储消息索引，文件的内容结构如图：
 
-![img](https://s2.loli.net/2022/04/11/fRUIDHaF14gtkoc.png)
+![](https://s2.loli.net/2022/04/11/fRUIDHaF14gtkoc.png)
 
 索引文件主要用于根据key来查询消息的，流程主要是：
 
@@ -393,7 +393,7 @@ RocketMQ消息订阅有两种模式，一种是Push模式，即MQServer主动向
 
 首先看下消费端的负载均衡：
 
-![img](https://s2.loli.net/2022/04/11/XDkhIBlJypvx7u9.png)
+![](https://s2.loli.net/2022/04/11/XDkhIBlJypvx7u9.png)
 
 消费端会通过RebalanceService线程，10秒钟做一次基于topic下的所有队列负载：
 
@@ -407,7 +407,7 @@ RocketMQ消息订阅有两种模式，一种是Push模式，即MQServer主动向
 
 消费端的Push模式是通过长轮询的模式来实现的，就如同下图：
 
-![img](https://s2.loli.net/2022/04/11/AsmClOr6nFLS3Jg.png)
+![](https://s2.loli.net/2022/04/11/AsmClOr6nFLS3Jg.png)
 
 Consumer端每隔一段时间主动向broker发送拉消息请求，broker在收到Pull请求后，如果有消息就立即返回数据，Consumer端收到返回的消息后，再回调消费者设置的Listener方法。如果broker在收到Pull请求时，消息队列里没有数据，broker端会阻塞请求直到有数据传递或超时才返回。
 
