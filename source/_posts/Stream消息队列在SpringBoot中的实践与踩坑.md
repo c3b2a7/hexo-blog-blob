@@ -3,7 +3,7 @@ title: Stream消息队列在SpringBoot中的实践与踩坑
 tags:
   - Spring
   - Redis
-  - MQ
+  - MessageQueue
   - SpringBoot
 categories: 正常的文章
 date: 2020-06-28 21:54:57
@@ -444,5 +444,5 @@ RedisCommandExecutionException: ERR The $ ID is meaningless in the context of XR
 
 
 ## 总结
-  
+
 其实在实践之初，我在网上也搜了很多相关的资料，但是发现这些资料基本都是使用redis-cli进行命令上的操作，并没有`SpringBoot`中实现。这次实践可谓是艰辛，由于目前该支持的迭代次数比较少，不乏一些bug或者小问题（2.3已经比较稳定），并且只有`lettuce`提供了stream类型的操作实现，而`lettuce`本身又有些小毛病，这些因素结合在一起也就导致这个过程花费了我整整两天时间，而这篇博客又花了整整一下午的时间才算完成，其中可能有些内容因为涉及东西比较多只能粗略提一下，并且语言组织上不太好可能不好去理解。话说回来，这篇文章也算是我自己实践后的一个个人总结吧，这个过程其实学到的东西还是很多的，也不枉费花了这么多时间。如果你发现文章有什么地方有问题或者有什么地方不理解，也欢迎在评论区留言一起交流~

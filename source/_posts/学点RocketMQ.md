@@ -2,7 +2,7 @@
 title: 学点RocketMQ
 categories: 正常的文章
 date: 2022-05-02 11:42:17
-tags:
+tags: MessageQueue
 ---
 
 
