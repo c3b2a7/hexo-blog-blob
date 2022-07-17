@@ -76,7 +76,9 @@ git config user.email "b@example.com"
 
 ## 修改远程仓库的地址
 
-接下来我们还要重新设置远程仓库的地址，因为克隆仓库或者创建github仓库添加远程仓库地址时使用的主机标识默认是`github.com`，然而在config文件中对这个`Host`是使用`~/.ssh/id_rsa`密钥去验证，所以当我们本地已有b账号下的仓库或者未来克隆b账号下的仓库时要修改默认的远程仓库地址：
+接下来我们还要重新设置远程仓库的地址，因为克隆仓库或者创建github仓库添加远程仓库地址时使用的主机标识默认是`github.com`，然而在config文件中对这个`Host`是使用`~/.ssh/id_rsa`密钥去验证，所以当我们本地已有b账号下的仓库或者未来克隆b账号下的仓库时要修改默认的远程仓库地址，两种方式：
+
+**先删除再添加**
 
 ```bash
 git remote rm origin
@@ -95,6 +97,20 @@ git push origin master
 
 ```bash
 git branch -u origin/master master
+```
+
+**直接修改远程仓库地址**
+
+1、Git查看远程仓库名称
+
+```bash
+git remote -v
+```
+
+2、修改地址
+
+```bash
+git remote set-url origin git@b.github.com:b/repo.git
 ```
 
 ## 总结
